@@ -24,7 +24,7 @@ export default {
 				'square',
 				'tri'
 			],
-			img: 'tri',
+			img: 'square',
 			greets: [
 				'nice day today',
 				'drink some water',
