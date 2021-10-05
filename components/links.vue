@@ -1,18 +1,21 @@
 <template>
 	<div id="flexy">
 		<div class="links" id="left">
-			<a class="li" href=""></a>
+			<!-- <a class="li" href=""></a> -->
+			<Shaper/>
 		</div>
 		<div class="links" id="center">
-			<a class="li" href=""></a>
+			<!-- <a class="li" href=""></a> -->
+			<Shaper/>
 		</div>
 		<div class="links" id="right">
-			<a class="li" href=""></a>
+			<!-- <a class="li" href=""></a> -->
+			<Shaper/>
 		</div>
-		<button
+		<!-- <button
 			v-on:click="linkr"
 			id="button">randy
-		</button>
+		</button> -->
 	</div>
 </template>
 
@@ -21,8 +24,8 @@
 // but maybe play around with swapping props live with a button like this?
 export default {
 	mounted() {
-		const randy = Math.floor(Math.random() * this.links.length);
-		document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
+		// const randy = Math.floor(Math.random() * this.links.length);
+		// document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
 	},
 	methods: {
 		linkr() {
