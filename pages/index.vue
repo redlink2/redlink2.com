@@ -5,7 +5,7 @@
 		<div class="border" id="belly">
 			<Links/>
 		</div>
-		<div class="border" id="feet"><Search/></div>
+		<div class="border" id="feet"><Randbutt/><!--<Search/>--></div>
 	</div>
 </template>
 
@@ -57,6 +57,8 @@ body {
 	border-color: red;
 }
 #feet {
+	display: flex;
+	justify-content: center;
 	grid-area: feet;
 	color: orange;
 	border-color: yellow;

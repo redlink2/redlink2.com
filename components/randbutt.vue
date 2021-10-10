@@ -1,8 +1,8 @@
 <template>
-    <button
-        v-on:click="linkr"
-        id="button">randy
-    </button>
+	<button
+		v-on:click="linkr"
+		id="button">randy
+	</button>
 </template>
 
 <script>
@@ -40,8 +40,8 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 1em;
-	width: auto;
-	height: auto;
+	margin: 2.5vh;
+	width: 5vw;
+	height: 6vh;
 }
 </style>
