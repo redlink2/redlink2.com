@@ -2,36 +2,31 @@
 	<div id="flexy">
 		<div class="links" id="left">
 			<!-- <a class="li" href=""></a> -->
-			<Shaper/>
+			<img :src="require(`~/assets/circle.svg`)" id="fit"/>
 		</div>
 		<div class="links" id="center">
 			<!-- <a class="li" href=""></a> -->
-			<Shaper/>
+			<img :src="require(`~/assets/tri.svg`)" id="fit"/>
 		</div>
 		<div class="links" id="right">
 			<!-- <a class="li" href=""></a> -->
-			<Shaper/>
+			<img :src="require(`~/assets/square.svg`)" v-on:click="sel3" id="fit"/>
 		</div>
-		<!-- <button
-			v-on:click="linkr"
-			id="button">randy
-		</button> -->
 	</div>
 </template>
 
 <script>
-// so i think that v-if= activetab is probably the way to go
-// but maybe play around with swapping props live with a button like this?
 export default {
 	mounted() {
-		// const randy = Math.floor(Math.random() * this.links.length);
-		// document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
 	},
 	methods: {
-		linkr() {
-			const randy = Math.floor(Math.random() * this.links.length);
-			document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
+		sel3() {
+			this.$emit('update:seltab', 3)
 		}
+		// linkr() {
+		// 	const randy = Math.floor(Math.random() * this.links.length);
+		// 	document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
+		// }
 	},
 	data() {
 		return {
@@ -75,7 +70,7 @@ export default {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 #left {
 	border-color: cyan;

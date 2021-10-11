@@ -1,7 +1,7 @@
 <template>
 	<div class="border" id="grid-container">
 		<div class="border" id="leftarm"><Lefty/></div>
-		<div class="border" id="rightarm"><Righty/></div>
+		<div class="border" id="rightarm"><Rightyy/></div>
 		<div class="border" id="belly">
 			<Links/>
 		</div>
