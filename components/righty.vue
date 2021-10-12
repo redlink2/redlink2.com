@@ -1,37 +1,40 @@
 <template>
-	<div>
-		<h1 id="fill">{{selection}}</h1>
+	<div id="contain">
+		<div id="link1">
+			<!-- <a class="li" href="">doof</a> -->
+		</div>
+		<div id="link2">
+			<!-- <a class="li" href="">goof</a> -->
+		</div>
+		<div id="link3">
+			<!-- <a class="li" href="">boof</a> -->
+		</div>
 	</div>
 </template>
 
 <script>
 export default {
 	mounted() {
-		const randy = Math.floor(Math.random() * this.num.length);
-		document.querySelector('#fill').innerHTML = this.num[randy];
 	},
 	data() {
 		return {
-			num: [
-				'1',
-				'2',
-				'3',
-				'4',
-				'5',
-				'6',
-				'7',
-				'8'
-			],
-			selection: '0'
 		}
 	}
 }
 </script>
 
-<style>
-#rightarm {
-	grid-area: rightarm;
-	color: teal;
-	border-color: blue;
+<style scoped>
+#contain {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
+/* #link1 {
+}
+#link2 {
+}
+#link3 {
+} */
 </style>

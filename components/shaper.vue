@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #bound {
 	height: 100%;
 	width: 100%;

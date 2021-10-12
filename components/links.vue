@@ -1,16 +1,19 @@
 <template>
-	<div id="flexy">
+	<div class="flexy">
 		<div class="links" id="left">
-			<!-- <a class="li" href=""></a> -->
-			<img :src="require(`~/assets/circle.svg`)" id="fit"/>
+			<div id="bound">
+				<img :src="require(`~/assets/circle.svg`)" id="fit"/>
+			</div>
 		</div>
 		<div class="links" id="center">
-			<!-- <a class="li" href=""></a> -->
-			<img :src="require(`~/assets/tri.svg`)" id="fit"/>
+			<div id="bound">
+				<img :src="require(`~/assets/tri.svg`)" id="fit"/>
+			</div>
 		</div>
 		<div class="links" id="right">
-			<!-- <a class="li" href=""></a> -->
-			<img :src="require(`~/assets/square.svg`)" v-on:click="sel3" id="fit"/>
+			<div id="bound">
+				<img :src="require(`~/assets/square.svg`)" v-on:click="sel3" id="fit"/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -45,21 +48,27 @@ export default {
 }
 </script>
 
-<style>
-#flexy {
+<style scoped>
+.flexy {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
-#button {
+#bound {
+	height: 100%;
+	width: 100%;
 	display: flex;
-	justify-content: center;
+	flex-direction: row;
 	align-items: center;
-	padding: 1em;
-	width: auto;
-	height: auto;
+	justify-content: center;
+}
+#fit {
+	display: flex;
+	width: 50%;
+	height: 50%;
+	/* filter: hue-rotate(230deg); */
 }
 .links {
 	height: 100%;

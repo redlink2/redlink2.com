@@ -1,7 +1,7 @@
 <template>
 	<div class="border" id="grid-container">
 		<div class="border" id="leftarm"><Lefty/></div>
-		<div class="border" id="rightarm"><Rightyy/></div>
+		<div class="border" id="rightarm"><Righty/></div>
 		<div class="border" id="belly">
 			<Links/>
 		</div>
@@ -50,6 +50,16 @@ body {
 	border-style: ridge;
 	border-width: 8px;
 	background-color: indigo;
+}
+#rightarm {
+	grid-area: rightarm;
+	color: teal;
+	border-color: blue;
+}
+#leftarm {
+	grid-area: leftarm;
+	color: forestGreen;
+	border-color: green;
 }
 #belly {
 	grid-area: belly;
