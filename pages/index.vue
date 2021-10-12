@@ -17,8 +17,8 @@ export default {
 
 <style>
 @font-face {
-  font-family: 'panicsans';
-  src: url('~/assets/panicsans.ttf');
+	font-family: 'panicsans';
+	src: url('~/assets/panicsans.ttf');
 }
 * {
 	font-family: 'panicsans';

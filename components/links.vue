@@ -2,17 +2,26 @@
 	<div class="flexy">
 		<div class="links" id="left">
 			<div id="bound">
-				<img :src="require(`~/assets/circle.svg`)" id="fit"/>
+				<img
+				:src="require(`~/assets/circle.svg`)"
+				v-on:click="linkset1"
+				id="fit"/>
 			</div>
 		</div>
 		<div class="links" id="center">
 			<div id="bound">
-				<img :src="require(`~/assets/tri.svg`)" id="fit"/>
+				<img
+				:src="require(`~/assets/tri.svg`)"
+				v-on:click="linkset2"
+				id="fit"/>
 			</div>
 		</div>
 		<div class="links" id="right">
 			<div id="bound">
-				<img :src="require(`~/assets/square.svg`)" v-on:click="sel3" id="fit"/>
+				<img
+				:src="require(`~/assets/square.svg`)"
+				v-on:click="linkset3"
+				id="fit"/>
 			</div>
 		</div>
 	</div>
@@ -23,12 +32,23 @@ export default {
 	mounted() {
 	},
 	methods: {
-		sel3() {
-			this.$emit('update:seltab', 3)
+		linkset1() {
+			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `github` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astral.com` + `">` + `astral` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `https://sidebar.io` + `">` + `sidebar` + `</a>`
+		},
+		linkset2() {
+			document.querySelector('#link1').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+		},
+		linkset3() {
+			document.querySelector('#link1').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
 		}
-		// linkr() {
-		// 	const randy = Math.floor(Math.random() * this.links.length);
-		// 	document.querySelector('#left').innerHTML = `<a href="` + this.links[randy] + `">` + this.text[randy] + `</a>`
+		// sel3() {
+		// 	this.$emit('update:seltab', 3)
 		// }
 	},
 	data() {
