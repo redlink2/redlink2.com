@@ -28,7 +28,7 @@ export default {
 	methods: {
 		linkset1() {
 			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `Github` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astral.com` + `">` + `Astral` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astralapp.com` + `">` + `Astral` + `</a>`
 			document.querySelector('#link3').innerHTML = `<a href="` + `https://sidebar.io` + `">` + `Sidebar` + `</a>`
 		},
 		linkset2() {
