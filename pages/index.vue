@@ -10,8 +10,8 @@
 			<Links />
 		</div>
 		<div class="border" id="feet">
-			<Randbutt />
-			<!--<Search/>-->
+			<!-- <Randbutt /> -->
+			<Search />
 		</div>
 	</div>
 </template>

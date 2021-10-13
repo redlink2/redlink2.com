@@ -2,26 +2,17 @@
 	<div class="flexy">
 		<div class="links" id="left">
 			<div id="bound">
-				<img
-				:src="require(`~/assets/circle.svg`)"
-				v-on:click="linkset1"
-				id="fit"/>
+				<img :src="require(`~/assets/circle.svg`)" v-on:click="linkset1" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="center">
 			<div id="bound">
-				<img
-				:src="require(`~/assets/tri.svg`)"
-				v-on:click="linkset2"
-				id="fit"/>
+				<img :src="require(`~/assets/tri.svg`)" v-on:click="linkset2" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="right">
 			<div id="bound">
-				<img
-				:src="require(`~/assets/square.svg`)"
-				v-on:click="linkset3"
-				id="fit"/>
+				<img :src="require(`~/assets/square.svg`)" v-on:click="linkset3" id="fit" />
 			</div>
 		</div>
 	</div>
@@ -30,22 +21,25 @@
 <script>
 export default {
 	mounted() {
+		document.querySelector('#link1').innerHTML = `<a>press</a>`
+		document.querySelector('#link2').innerHTML = `<a>a</a>`
+		document.querySelector('#link3').innerHTML = `<a>button</a>`
 	},
 	methods: {
 		linkset1() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `github` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astral.com` + `">` + `astral` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `https://sidebar.io` + `">` + `sidebar` + `</a>`
+			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `Github` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astral.com` + `">` + `Astral` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `https://sidebar.io` + `">` + `Sidebar` + `</a>`
 		},
 		linkset2() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link1').innerHTML = `<a href="` + `http://10.0.0.8:8096` + `">` + `Jellyfin` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `http://10.0.0.22/admin` + `">` + `PiHole` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `http://10.0.0.1` + `">` + `Router` + `</a>`
 		},
 		linkset3() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `` + `">` + `null` + `</a>`
+			document.querySelector('#link1').innerHTML = `<a href="` + `https://mail.protonmail.com` + `">` + `Protonmail` + `</a>`
+			document.querySelector('#link2').innerHTML = `<a href="` + `https://codecademy.com/learn` + `">` + `Codecademy` + `</a>`
+			document.querySelector('#link3').innerHTML = `<a href="` + `https://mega.nz` + `">` + `Mega` + `</a>`
 		}
 		// sel3() {
 		// 	this.$emit('update:seltab', 3)
@@ -53,16 +47,6 @@ export default {
 	},
 	data() {
 		return {
-			links: [
-				'https://github.com',
-				'https://app.astralapp.com/dashboard',
-				'https://codecademy.com/learn'
-			],
-			text: [
-				'github',
-				'astral',
-				'codecademy'
-			]
 		}
 	}
 }

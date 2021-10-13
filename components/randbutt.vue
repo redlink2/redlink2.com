@@ -1,26 +1,14 @@
 <template>
 	<div class="flexy">
-		<button
-			v-on:click="linkrand"
-			id="button"> randy
-		</button>
-		<button
-			v-on:click="linkset1"
-			id="button"> set1
-		</button>
-		<button
-			v-on:click="linkr"
-			id="button"> numbers
-		</button>
+		<button v-on:click="linkrand" id="button">randy</button>
+		<button v-on:click="linkset1" id="button">set1</button>
+		<button v-on:click="linkr" id="button">numbers</button>
 	</div>
 </template>
 
 <script>
 export default {
 	mounted() {
-			document.querySelector('#link1').innerHTML = `<h1>press</h1>`
-			document.querySelector('#link2').innerHTML = `<h1>a</h1>`
-			document.querySelector('#link3').innerHTML = `<h1>button</h1>`
 	},
 	methods: {
 		linkrand() {
