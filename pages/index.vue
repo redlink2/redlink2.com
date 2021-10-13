@@ -1,11 +1,18 @@
 <template>
 	<div class="border" id="grid-container">
-		<div class="border" id="leftarm"><Lefty/></div>
-		<div class="border" id="rightarm"><Righty/></div>
-		<div class="border" id="belly">
-			<Links/>
+		<div class="border" id="leftarm">
+			<Lefty />
 		</div>
-		<div class="border" id="feet"><Randbutt/><!--<Search/>--></div>
+		<div class="border" id="rightarm">
+			<Righty />
+		</div>
+		<div class="border" id="belly">
+			<Links />
+		</div>
+		<div class="border" id="feet">
+			<Randbutt />
+			<!--<Search/>-->
+		</div>
 	</div>
 </template>
 
@@ -16,15 +23,37 @@ export default {
 </script>
 
 <style>
+:root {
+	--primeRed: rgb(255, 0, 0);
+	--subRed: rgb(178, 34, 34);
+
+	--primeBlue: rgb(0, 0, 255);
+	--subBlue: rgb(0, 128, 128);
+	--altBlue: rgb(0, 174, 255);
+
+	--primeGreen: rgb(0, 128, 0);
+	--subGreen: rgb(34, 139, 34);
+
+	--primeYellow: rgb(255, 255, 0);
+	--subYellow: rgb(255, 166, 0);
+
+	--bgPurple: rgb(76, 0, 130);
+	--borderGray: rgb(128, 128, 128);
+}
 @font-face {
-	font-family: 'panicsans';
-	src: url('~/assets/panicsans.ttf');
+	font-family: "panicsans";
+	src: url("~/assets/panicsans.ttf");
 }
 * {
-	font-family: 'panicsans';
+	font-family: "panicsans";
 }
 body {
 	background-color: black;
+}
+a {
+	font-size: 4vh;
+	text-decoration: none;
+	color: var(--altBlue);
 }
 #grid-container {
 	height: 96.6vh;
@@ -42,35 +71,34 @@ body {
 		"belly belly belly belly belly belly"
 		"feet feet feet feet feet feet";
 	text-align: center;
-	color: red;
 	border-style: dashed;
-	border-color: gray;
+	border-color: var(--borderGray);
 }
 .border {
 	border-style: ridge;
 	border-width: 8px;
-	background-color: indigo;
+	background-color: var(--bgPurple);
 }
 #rightarm {
 	grid-area: rightarm;
-	color: teal;
-	border-color: blue;
+	color: var(--subBlue);
+	border-color: var(--primeBlue);
 }
 #leftarm {
 	grid-area: leftarm;
-	color: forestGreen;
-	border-color: green;
+	color: var(--subGreen);
+	border-color: var(--primeGreen);
 }
 #belly {
 	grid-area: belly;
-	color: firebrick;
-	border-color: red;
+	color: var(--subRed);
+	border-color: var(--primeRed);
 }
 #feet {
 	display: flex;
 	justify-content: center;
 	grid-area: feet;
-	color: orange;
-	border-color: yellow;
+	color: var(--subYellow);
+	border-color: var(--primeYellow);
 }
 </style>

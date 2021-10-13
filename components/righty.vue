@@ -31,10 +31,4 @@ export default {
 	flex-direction: column;
 	justify-content: space-evenly;
 }
-/* #link1 {
-}
-#link2 {
-}
-#link3 {
-} */
 </style>
