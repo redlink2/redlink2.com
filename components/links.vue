@@ -40,14 +40,7 @@ export default {
 			document.querySelector('#link1').innerHTML = `<a href="` + `https://mail.protonmail.com` + `">` + `Protonmail` + `</a>`
 			document.querySelector('#link2').innerHTML = `<a href="` + `https://codecademy.com/learn` + `">` + `Codecademy` + `</a>`
 			document.querySelector('#link3').innerHTML = `<a href="` + `https://mega.nz` + `">` + `Mega` + `</a>`
-		}
-		// sel3() {
-		// 	this.$emit('update:seltab', 3)
-		// }
-	},
-	data() {
-		return {
-		}
+		},
 	}
 }
 </script>

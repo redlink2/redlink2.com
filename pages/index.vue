@@ -1,26 +1,19 @@
 <template>
-	<div class="border" id="grid-container">
-		<div class="border" id="leftarm">
+	<div class="bord0" id="grid-container">
+		<div class="bord0" id="leftarm">
 			<Lefty />
 		</div>
-		<div class="border" id="rightarm">
+		<div class="bord0" id="rightarm">
 			<Righty />
 		</div>
-		<div class="border" id="belly">
+		<div class="bord0" id="belly">
 			<Links />
 		</div>
-		<div class="border" id="feet">
-			<!-- <Randbutt /> -->
+		<div class="bord0" id="feet">
 			<Search />
 		</div>
 	</div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style>
 :root {
@@ -38,6 +31,7 @@ export default {
 	--subYellow: rgb(255, 166, 0);
 
 	--bgPurple: rgb(76, 0, 130);
+	--bgTest: pink;
 	--borderGray: rgb(128, 128, 128);
 }
 @font-face {
@@ -74,10 +68,15 @@ a {
 	border-style: dashed;
 	border-color: var(--borderGray);
 }
-.border {
+.bord0 {
 	border-style: ridge;
 	border-width: 8px;
 	background-color: var(--bgPurple);
+}
+.bord1 {
+	border-style: ridge;
+	border-width: 8px;
+	background-color: var(--bgTest);
 }
 #rightarm {
 	grid-area: rightarm;
