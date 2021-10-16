@@ -18,7 +18,6 @@ export default {
 				'better assets to use besides builtin buttons',
 				'maybe there should be a picture here that gets changed?'
 			],
-			selection: 'bozo'
 		}
 	}
 }
