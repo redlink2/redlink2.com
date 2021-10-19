@@ -2,17 +2,17 @@
 	<div class="flexy">
 		<div class="links" id="left">
 			<div id="bound">
-				<img :src="require(`~/assets/circle.svg`)" v-on:click="linkset1" id="fit" />
+				<img src="../assets/circle.svg" v-on:click="linkset1" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="center">
 			<div id="bound">
-				<img :src="require(`~/assets/tri.svg`)" v-on:click="linkset2" id="fit" />
+				<img src="../assets/square.svg" v-on:click="linkset2" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="right">
 			<div id="bound">
-				<img :src="require(`~/assets/square.svg`)" v-on:click="linkset3" id="fit" />
+				<img src="../assets/tri.svg" v-on:click="linkset3" id="fit" />
 			</div>
 		</div>
 	</div>
@@ -24,6 +24,13 @@ export default {
 		document.querySelector('#link1').innerHTML = `<a>press</a>`
 		document.querySelector('#link2').innerHTML = `<a>a</a>`
 		document.querySelector('#link3').innerHTML = `<a>button</a>`
+	},
+	data() {
+		return {
+			square: "~/assets/square.svg",
+			circle: "~/assets/circle.svg",
+			triangle: "~/assets/triangle.svg"
+		}
 	},
 	methods: {
 		linkset1() {
