@@ -1,6 +1,6 @@
 <template>
 	<div id="bound">
-		<img :src="require(`~/assets/${img}.svg`)" id="fit" />
+		<img :src="require(`~/assets/${img}.svg`)" id="fit"/>
 	</div>
 </template>
 
