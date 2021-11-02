@@ -12,6 +12,9 @@ export default {
             result += char.charAt(Math.floor(Math.random() * charLen));
             document.querySelector('#lefty').innerHTML = `<h1>` + result + `</h1>`;
         }
+        // setInterval(() => {
+        //     window.scrollBy(1, 0)
+        // }, 50);
     },
 }
 </script>
@@ -25,5 +28,6 @@ export default {
     justify-content: center;
     font-size: 3vh;
     color: var(--subGreen);
+    overflow: scroll;
 }
 </style>
