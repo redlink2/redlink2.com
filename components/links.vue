@@ -1,17 +1,17 @@
 <template>
 	<div class="flexy">
 		<div class="links" id="left">
-			<div id="bound">
+			<div class="bound">
 				<img :src="require(`~/assets/circle.svg`)" v-on:click="linkset1" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="center">
-			<div id="bound">
+			<div class="bound">
 				<img :src="require(`~/assets/tri.svg`)" v-on:click="linkset2" id="fit" />
 			</div>
 		</div>
 		<div class="links" id="right">
-			<div id="bound">
+			<div class="bound">
 				<img :src="require(`~/assets/square.svg`)" v-on:click="linkset3" id="fit" />
 			</div>
 		</div>
@@ -53,7 +53,7 @@ export default {
 	flex-direction: row;
 	align-items: center;
 }
-#bound {
+.bound {
 	height: 100%;
 	width: 100%;
 	display: flex;
