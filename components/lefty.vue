@@ -11,12 +11,10 @@ export default {
 	data() {
 		return {
 			ideas: [
-				'make shapes = links',
 				'better background color',
-				'buttons to change righty an lefty',
+				'button to change theme',
+				'scrolling markov chain with themes',
 				'hueshift on the shapes with random levels?',
-				'better assets to use besides builtin buttons',
-				'maybe there should be a picture here that gets changed?'
 			],
 		}
 	}
