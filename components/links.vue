@@ -23,7 +23,7 @@ export default {
 	mounted() {
 		document.querySelector('#link1').innerHTML = `<a>press</a>`
 		document.querySelector('#link2').innerHTML = `<a>a</a>`
-		document.querySelector('#link3').innerHTML = `<a>button</a>`
+		document.querySelector('#link3').innerHTML = `<a>shape</a>`
 	},
 	methods: {
 		linkset1() {
