@@ -14,6 +14,7 @@ export default {
 				'better background color',
 				'button to change theme',
 				'scrolling markov chain with themes',
+				'word + russian translation on lefty',
 				'hueshift on the shapes with random levels?',
 			],
 		}
