@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: SSH and deploy node app
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
-        script: |
-          cd ~/redlink2.com
-          git pull origin main
-          yarn install
-          yarn generate
-          rm -rf /var/www/redlink2.com/*
-          cp -r dist/* /var/www/redlink2.com
+      - name: SSH and deploy node app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~/redlink2.com
+            git pull origin main
+            yarn install
+            yarn generate
+            rm -rf /var/www/redlink2.com/*
+            cp -r dist/* /var/www/redlink2.com
