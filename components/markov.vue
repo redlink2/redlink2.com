@@ -8,13 +8,13 @@ export default {
         const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*()-_=+{[]}<>,.:;~';
         var result = '';
         const charLen = char.length;
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 100; i++) {
             result += char.charAt(Math.floor(Math.random() * charLen));
             document.querySelector('#lefty').innerHTML = `<h1>` + result + `</h1>`;
         }
-        // setInterval(() => {
-        //     window.scrollBy(1, 0)
-        // }, 50);
+        setInterval(() => {
+            document.querySelector('#lefty').scrollBy(1, 0)
+        }, 80);
     },
 }
 </script>

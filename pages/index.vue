@@ -85,6 +85,7 @@ a {
 }
 #leftarm {
 	grid-area: leftarm;
+	overflow: auto;
 	color: var(--subGreen);
 	border-color: var(--primeGreen);
 }
