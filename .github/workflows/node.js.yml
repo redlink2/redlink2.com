@@ -22,5 +22,8 @@ jobs:
             git pull origin main
             yarn install
             yarn generate
+            echo "removing old webiste"
             rm -rf /var/www/redlink2.com/*
+            echo "copying new files in"
             cp -r dist/* /var/www/redlink2.com
+            echo "complete!"
