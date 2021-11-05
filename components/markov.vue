@@ -5,7 +5,7 @@
 <script>
 export default {
     mounted() {
-        const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*()-_=+{[]}<>,.:;~';
+        const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*)-_=+]},.:;~';
         var result = '';
         const charLen = char.length;
         for (var i = 0; i < 100; i++) {
