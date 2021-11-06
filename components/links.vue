@@ -20,23 +20,44 @@
 
 <script>
 export default {
+	mounted() {
+		var link1 = document.querySelector('#link1')
+		var link2 = document.querySelector('#link2')
+		var link3 = document.querySelector('#link3')
+	},
 	methods: {
 		linkset1() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `Github` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `https://app.astralapp.com` + `">` + `Astral` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `https://sidebar.io` + `">` + `Sidebar` + `</a>`
+			link1.innerHTML = `<a href="` + this.github[0] + `">` + this.github[1] + `</a>`
+			link2.innerHTML = `<a href="` + this.jelly[0] + `">` + this.astral[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.sidebar[0] + `">` + this.sidebar[1] + `</a>`
 		},
 		linkset2() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `http://10.0.0.8:8096` + `">` + `Jellyfin` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `http://10.0.0.22/admin` + `">` + `PiHole` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `http://10.0.0.1` + `">` + `Router` + `</a>`
+			link1.innerHTML = `<a href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
+			link2.innerHTML = `<a href="` + this.pihole[0] + `">` + this.pihole[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.router[0] + `">` + this.router[1] + `</a>`
 		},
 		linkset3() {
-			document.querySelector('#link1').innerHTML = `<a href="` + `https://mail.protonmail.com` + `">` + `Protonmail` + `</a>`
-			document.querySelector('#link2').innerHTML = `<a href="` + `https://codecademy.com/learn` + `">` + `Codecademy` + `</a>`
-			document.querySelector('#link3').innerHTML = `<a href="` + `https://mega.nz` + `">` + `Mega` + `</a>`
+			link1.innerHTML = `<a href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
+			link2.innerHTML = `<a href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.mega[0] + `">` + this.mega[1] + `</a>`
 		},
-	}
+	},
+	data() {
+		return {
+			//tab1
+			github: ["https://github.com", "Github"],
+			astral: ["https://app.astralapp.com", "Astral"],
+			sidebar: ["https://sidebar.io", "Sidebar"],
+			//tab2
+			jelly: ["http://10.0.0.8:8096", "Jellyfin"],
+			pihole: ["http://10.0.0.22/admin", "PiHole"],
+			router: ["http://10.0.0.1", "Router"],
+			//tab3
+			proton: ["https://mail.protonmail.com", "ProtonMail"],
+			codecad: ["https://codecademy.com/learn", "Codecademy"],
+			mega: ["https://mega.nz", "Mega"],
+		}
+	},
 }
 </script>
 
