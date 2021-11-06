@@ -1,16 +1,18 @@
 <template>
-	<div class="bord0" id="grid-container">
-		<div class="bord0" id="leftarm">
-			<Markov />
-		</div>
-		<div class="bord0" id="rightarm">
-			<Righty />
-		</div>
-		<div class="bord0" id="belly">
-			<Links />
-		</div>
-		<div class="bord0" id="feet">
-			<Search />
+	<div id="center">
+		<div class="bord0" id="grid-container">
+			<div class="bord0" id="leftarm">
+				<Markov />
+			</div>
+			<div class="bord0" id="rightarm">
+				<Righty />
+			</div>
+			<div class="bord0" id="belly">
+				<Links />
+			</div>
+			<div class="bord0" id="feet">
+				<Search />
+			</div>
 		</div>
 	</div>
 </template>
@@ -48,6 +50,10 @@ a {
 	font-size: 4vh;
 	text-decoration: none;
 	color: var(--primeYellow);
+}
+#center {
+	display: flex;
+	justify-content: center;
 }
 #grid-container {
 	height: 96.6vh;
@@ -100,5 +106,10 @@ a {
 	grid-area: feet;
 	color: var(--subYellow);
 	border-color: var(--primeYellow);
+}
+@media (max-width: 650px) {
+	#grid-container {
+		height: 95vh;
+	}
 }
 </style>
