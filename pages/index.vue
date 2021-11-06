@@ -47,7 +47,7 @@ body {
 a {
 	font-size: 4vh;
 	text-decoration: none;
-	color: var(--altBlue);
+	color: var(--primeYellow);
 }
 #grid-container {
 	height: 96.6vh;
