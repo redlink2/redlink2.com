@@ -20,11 +20,6 @@
 
 <script>
 export default {
-	mounted() {
-		document.querySelector('#link1').innerHTML = `<a>Press</a>`
-		document.querySelector('#link2').innerHTML = `<a>a</a>`
-		document.querySelector('#link3').innerHTML = `<a>shape</a>`
-	},
 	methods: {
 		linkset1() {
 			document.querySelector('#link1').innerHTML = `<a href="` + `https://github.com` + `">` + `Github` + `</a>`
@@ -66,6 +61,23 @@ export default {
 	width: 50%;
 	height: 50%;
 	/* filter: hue-rotate(230deg); */
+}
+#fit:hover {
+	cursor: pointer;
+}
+@keyframes slide-in {
+	0% {
+		transform: rotate(0turn);
+	}
+	50% {
+		filter: invert();
+	}
+	100% {
+		transform: rotate(1turn);
+	}
+}
+#fit:active {
+	animation: slide-in 1000ms;
 }
 .links {
 	height: 100%;
