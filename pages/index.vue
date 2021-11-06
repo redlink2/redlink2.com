@@ -108,6 +108,10 @@ a {
 	border-color: var(--primeYellow);
 }
 @media (max-width: 650px) {
+	html {
+		overflow: hidden;
+		height: 100%;
+	}
 	#grid-container {
 		height: 95vh;
 	}
