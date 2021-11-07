@@ -42,6 +42,7 @@
 }
 * {
 	font-family: "panicsans";
+	scrollbar-width: none;
 }
 body {
 	background-color: black;

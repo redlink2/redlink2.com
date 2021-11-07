@@ -6,16 +6,16 @@
 export default {
     mounted() {
         const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*)-_=+]},.:;~';
-        var result = '';
         const charLen = char.length;
         for (var i = 0; i < 100; i++) {
-            result += char.charAt(Math.floor(Math.random() * charLen));
-            document.querySelector('#lefty').innerHTML = `<h1>` + result + `</h1>`;
+            this.rng += char.charAt(Math.floor(Math.random() * charLen));
+            document.querySelector('#lefty').innerHTML = `<h1>` + this.rng + `</h1>`;
         }
-        scrollTo(0, 0)
-        setInterval(() => {
-            document.querySelector('#lefty').scrollBy(1, 0)
-        }, 80);
+    },
+    data() {
+        return {
+            rng: ""
+        }
     },
 }
 </script>
@@ -27,9 +27,19 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 180%;
+    white-space: nowrap;
     font-size: 3vh;
     color: var(--subGreen);
     overflow: scroll;
-    scrollbar-width: none;
+    animation: loopText 15000ms infinite linear;
+}
+@keyframes loopText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 </style>
