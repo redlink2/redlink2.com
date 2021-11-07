@@ -2,7 +2,7 @@
 	<div id="center">
 		<div class="bord0" id="grid-container">
 			<div class="bord0" id="leftarm">
-				<Markov />
+				<Lefty />
 			</div>
 			<div class="bord0" id="rightarm">
 				<Righty />
