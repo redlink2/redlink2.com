@@ -5,20 +5,18 @@
 <script>
 export default {
 	mounted() {
-		const randy = Math.floor(Math.random() * this.ideas.length);
-		document.querySelector('#lefty').innerHTML = `<h1>` + this.ideas[randy] + `</h1>`;
+		const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*)-_=+]},.:;~';
+		const charLen = char.length;
+		for (var i = 0; i < 100; i++) {
+			this.rng += char.charAt(Math.floor(Math.random() * charLen));
+			document.querySelector('#lefty').innerHTML = `<h1>` + this.rng + `</h1>`;
+		}
 	},
 	data() {
 		return {
-			ideas: [
-				'better background color',
-				'button to change theme',
-				'scrolling markov chain with themes',
-				'word + russian translation on lefty',
-				'hueshift on the shapes with random levels?',
-			],
+			rng: ""
 		}
-	}
+	},
 }
 </script>
 
@@ -29,7 +27,19 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding-right: 180%;
+	white-space: nowrap;
 	font-size: 3vh;
 	color: var(--subGreen);
+	overflow: scroll;
+	animation: loopText 15000ms infinite linear;
+}
+@keyframes loopText {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
 }
 </style>
