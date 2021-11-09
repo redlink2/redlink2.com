@@ -12,6 +12,7 @@
 			</div>
 			<div class="bord0" id="feet">
 				<Search />
+				<!-- <Linkto /> -->
 			</div>
 		</div>
 	</div>
