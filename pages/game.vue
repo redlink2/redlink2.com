@@ -1,8 +1,11 @@
 <template>
 <body>
     <div>
-        <h1>games</h1>
-        <p>black jack, rock paper scissors, guess the number</p>
+        <div id="mat">
+            <div id="opchoice">ops card</div>
+            <div id="urcard">your card</div>
+            <div id="hand">card 1 2 3 4</div>
+        </div>
     </div>
 </body>
 </template>
