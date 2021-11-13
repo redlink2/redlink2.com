@@ -2,17 +2,32 @@
 	<div class="flexy">
 		<div class="links" id="left">
 			<div class="bound">
-				<img :src="require(`~/assets/circle.svg`)" v-on:click="linkset1" id="fit" />
+				<img
+					:style="{ filter: hueRotate + hue1 + suffix }"
+					:src="require(`~/assets/circle.svg`)"
+					v-on:click="linkset1"
+					id="fit"
+				/>
 			</div>
 		</div>
 		<div class="links" id="center">
 			<div class="bound">
-				<img :src="require(`~/assets/tri.svg`)" v-on:click="linkset2" id="fit" />
+				<img
+					:style="{ filter: hueRotate + hue2 + suffix }"
+					:src="require(`~/assets/tri.svg`)"
+					v-on:click="linkset2"
+					id="fit"
+				/>
 			</div>
 		</div>
 		<div class="links" id="right">
 			<div class="bound">
-				<img :src="require(`~/assets/square.svg`)" v-on:click="linkset3" id="fit" />
+				<img
+					:style="{ filter: hueRotate + hue3 + suffix }"
+					:src="require(`~/assets/square.svg`)"
+					v-on:click="linkset3"
+					id="fit"
+				/>
 			</div>
 		</div>
 	</div>
@@ -24,6 +39,10 @@ export default {
 		var link1 = document.querySelector('#link1')
 		var link2 = document.querySelector('#link2')
 		var link3 = document.querySelector('#link3')
+		// rand gen hue1/2/3
+		this.hue1 = Math.floor(Math.random() * 333)
+		this.hue2 = Math.floor(Math.random() * 333)
+		this.hue3 = Math.floor(Math.random() * 333)
 	},
 	methods: {
 		linkset1() {
@@ -44,6 +63,12 @@ export default {
 	},
 	data() {
 		return {
+			//hue-rotate randomizer
+			hueRotate: "hue-rotate(",
+			hue1: 0,
+			hue2: 0,
+			hue3: 0,
+			suffix: "deg)",
 			//tab1
 			github: ["https://github.com", "Github"],
 			astral: ["https://app.astralapp.com", "Astral"],
@@ -81,7 +106,7 @@ export default {
 	display: flex;
 	width: 50%;
 	height: 50%;
-	/* filter: hue-rotate(230deg); */
+	filter: hue-rotate(0deg);
 }
 #fit:hover {
 	cursor: pointer;
@@ -91,7 +116,7 @@ export default {
 		transform: rotate(0turn);
 	}
 	50% {
-		filter: invert();
+		filter: hue-rotate(180deg);
 	}
 	100% {
 		transform: rotate(1turn);
