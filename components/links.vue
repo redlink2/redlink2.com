@@ -102,19 +102,11 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
-@keyframes fade-in {
-	0% {
-		opacity: 0%;
-	}
-	100% {
-		opacity: 100%;
-	}
-}
 #fit {
 	display: flex;
 	width: 50%;
 	height: 50%;
-	animation: fade-in 3200ms;
+	filter: hue-rotate(0deg);
 }
 #fit:hover {
 	cursor: pointer;
