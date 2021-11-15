@@ -22,7 +22,7 @@
             <div class="stay"></div>
             <div class="dealer"></div>
             <div class="hit">
-                <button v-on:click="deal">CLICKY</button>
+                <button v-on:click="deal">HIT</button>
             </div>
             <div class="playerHand">
                 <div class="pCard1" v-if="dealt">
