@@ -45,8 +45,13 @@ export default {
 	border-radius: 8vh;
 	border-color: var(--primeYellow);
 	font-family: panicsans;
-	font-size: 2em;
+	font-size: 200%;
 	text-align: center;
 	background-color: var(--subYellow);
+}
+@media (max-width: 650px) {
+	#bar {
+		font-size: 100%;
+	}
 }
 </style>
