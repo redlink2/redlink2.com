@@ -53,7 +53,7 @@ export default {
 		linkset2() {
 			link1.innerHTML = `<a href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
 			link2.innerHTML = `<a href="` + this.pihole[0] + `">` + this.pihole[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.router[0] + `">` + this.router[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.game[0] + `">` + this.game[1] + `</a>`
 		},
 		linkset3() {
 			link1.innerHTML = `<a href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
@@ -81,6 +81,8 @@ export default {
 			proton: ["https://mail.protonmail.com", "ProtonMail"],
 			codecad: ["https://codecademy.com/learn", "Codecademy"],
 			mega: ["https://mega.nz", "Mega"],
+			//working
+			game: ["https://redlink2.com/game", "Game WIP"]
 		}
 	},
 }
