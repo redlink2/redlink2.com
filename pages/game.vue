@@ -19,10 +19,20 @@
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
             </div>
-            <div class="stay"></div>
-            <div class="dealer"></div>
+            <div class="stay">
+                <button v-on:click="hide" class="btns">STAY</button>
+            </div>
+            <div class="dealer">
+                <textarea
+                    name="DEALER"
+                    id="dealer"
+                    cols="100"
+                    rows="20"
+                    placeholder="outputted text will go here"
+                ></textarea>
+            </div>
             <div class="hit">
-                <button v-on:click="deal">HIT</button>
+                <button v-on:click="deal" class="btns">HIT</button>
             </div>
             <div class="playerHand">
                 <div class="pCard1" v-if="dealt">
@@ -64,6 +74,9 @@ export default {
             //put card together
             this.pcard1 = this.suit + this.number
             this.dealt = true
+        },
+        hide() {
+            this.dealt = false
         }
 
     },
@@ -93,6 +106,7 @@ body {
 .container * {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     border: groove;
     border-color: red;
 }
@@ -101,6 +115,10 @@ body {
 }
 .playerHand {
     grid-area: 4 / 2 / 5 / 7;
+}
+.btns {
+    height: 50%;
+    width: 50%;
 }
 .hit {
     grid-area: 2 / 6 / 4 / 7;
