@@ -7,7 +7,8 @@ export default {
 	mounted() {
 		const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*)-_=+]},.:;~';
 		const charLen = char.length;
-		for (var i = 0; i < 100; i++) {
+		// at 74 length, it seems to cut off characters.
+		for (var i = 0; i < 64; i++) {
 			this.rng += char.charAt(Math.floor(Math.random() * charLen));
 			document.querySelector('#lefty').innerHTML = `<h1>` + this.rng + `</h1>`;
 		}
