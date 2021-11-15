@@ -3,41 +3,43 @@
     <div>
         <div class="container">
             <div class="opHand">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="oCard1">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="oCard2">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="oCard3">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="oCard4">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="oCard5">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
+                <div class="oCard1" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="oCard2" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="oCard3" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="oCard4" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="oCard5" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
             </div>
             <div class="stay"></div>
             <div class="dealer"></div>
-            <div class="hit"></div>
-            <div class="playerHand"></div>
-            <div class="pCard1">
-                <!-- <img :src="require(`~/assets/pc/${pcard1}.png`)" /> -->
+            <div class="hit">
+                <button v-on:click="deal">CLICKY</button>
             </div>
-            <div class="pCard2">
-                <img :src="require(`~/assets/pc/${suit}/${number}.png`)" />
-            </div>
-            <div class="pCard3">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="pCard4">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
-            </div>
-            <div class="pCard5">
-                <img :src="require(`~/assets/pc/${pcard}/${number}.png`)" />
+            <div class="playerHand">
+                <div class="pCard1" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="pCard2" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="pCard3" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="pCard4" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
+                <div class="pCard5" v-if="dealt">
+                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                </div>
             </div>
         </div>
     </div>
@@ -46,22 +48,31 @@
 <script>
 export default {
     mounted() {
-        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-        const numLen = nums.length
-        let selNum = Math.floor(Math.random() * numLen)
-        this.number = nums[selNum]
-        let suit = ["spade", "heart", "club", "diamond"]
-        const suitLen = suit.length
-        let selSuit = Math.floor(Math.random() * suitLen)
-        this.suit = suit[selSuit]
-        // this.pcard1 = this.suit + '/' + this.number
+    },
+    methods: {
+        deal() {
+            //gen number and select at random
+            const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+            const numLen = nums.length
+            let selNum = Math.floor(Math.random() * numLen)
+            this.number = nums[selNum]
+            //gen suit and select at random
+            const suit = ["spade", "heart", "club", "diamond"]
+            const suitLen = suit.length
+            let selSuit = Math.floor(Math.random() * suitLen)
+            this.suit = suit[selSuit]
+            //put card together
+            this.pcard1 = this.suit + this.number
+            this.dealt = true
+        }
+
     },
     data() {
         return {
-            suit: "heart",
+            suit: "spade",
             number: 0,
-            pcard: "spade",
-            pcard1: ""
+            pcard1: "spade0",
+            dealt: false
         }
     },
 }
@@ -71,6 +82,8 @@ body {
     background-color: goldenrod;
 }
 .container {
+    height: 96.6vh;
+    width: 98.9vw;
     display: grid;
     grid-template-columns: 0.5fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 0.5fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -79,7 +92,7 @@ body {
 }
 .container * {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     border: groove;
     border-color: red;
 }
