@@ -19,20 +19,16 @@
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
             </div>
-            <div class="stay">
+            <div class="btns1">
                 <button v-on:click="hide" class="btns">STAY</button>
+                <button v-on:click="hide" class="btns">FOLD</button>
             </div>
             <div class="dealer">
-                <textarea
-                    name="DEALER"
-                    id="dealer"
-                    cols="100"
-                    rows="20"
-                    placeholder="outputted text will go here"
-                ></textarea>
+                <textarea name="DEALER" id="dealerText" cols="10" rows="2" readonly></textarea>
             </div>
-            <div class="hit">
+            <div class="btns2">
                 <button v-on:click="deal" class="btns">HIT</button>
+                <button v-on:click="deal" class="btns">NEWGAME</button>
             </div>
             <div class="playerHand">
                 <div class="pCard1" v-show="dealt">
@@ -74,18 +70,25 @@ export default {
             //put card together
             this.pcard1 = this.suit + this.number
             this.dealt = true
+            // output message to dealer
+            let dealText = document.getElementById("dealerText")
+            this.message = " YOU HIT"
+            dealText.innerHTML = this.message
         },
         hide() {
             this.dealt = false
+            let dealText = document.getElementById("dealerText")
+            this.message = " YOU STAY"
+            dealText.innerHTML = this.message
         }
-
     },
     data() {
         return {
             suit: "spade",
             number: 0,
             pcard1: "spade0",
-            dealt: false
+            dealt: false,
+            message: String
         }
     },
 }
@@ -117,17 +120,33 @@ body {
     grid-area: 4 / 2 / 5 / 7;
 }
 .btns {
-    height: 50%;
+    height: 25%;
     width: 50%;
 }
-.hit {
+.btns2 {
     grid-area: 2 / 6 / 4 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
-.stay {
+.btns1 {
     grid-area: 2 / 2 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .dealer {
     grid-area: 2 / 3 / 4 / 6;
+}
+#dealerText {
+    display: block;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    height: 75%;
+    width: 75%;
+    font-size: 1000%;
+    text-align: center;
 }
 .pCard1 {
     grid-area: 4 / 2 / 5 / 3;
