@@ -3,19 +3,19 @@
     <div>
         <div class="container">
             <div class="opHand">
-                <div class="oCard1" v-if="dealt">
+                <div class="oCard1" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="oCard2" v-if="dealt">
+                <div class="oCard2" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="oCard3" v-if="dealt">
+                <div class="oCard3" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="oCard4" v-if="dealt">
+                <div class="oCard4" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="oCard5" v-if="dealt">
+                <div class="oCard5" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
             </div>
@@ -35,19 +35,19 @@
                 <button v-on:click="deal" class="btns">HIT</button>
             </div>
             <div class="playerHand">
-                <div class="pCard1" v-if="dealt">
+                <div class="pCard1" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="pCard2" v-if="dealt">
+                <div class="pCard2" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="pCard3" v-if="dealt">
+                <div class="pCard3" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="pCard4" v-if="dealt">
+                <div class="pCard4" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
-                <div class="pCard5" v-if="dealt">
+                <div class="pCard5" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
                 </div>
             </div>
