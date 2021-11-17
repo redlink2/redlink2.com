@@ -4,19 +4,19 @@
         <div class="container">
             <div class="opHand">
                 <div class="oCard1" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="oCard2" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="oCard3" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="oCard4" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="oCard5" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
             </div>
             <div class="btns1">
@@ -28,23 +28,23 @@
             </div>
             <div class="btns2">
                 <button v-on:click="deal" class="btns">HIT</button>
-                <button v-on:click="deal" class="btns">NEWGAME</button>
+                <button v-on:click="deck" class="btns">NEWGAME</button>
             </div>
             <div class="playerHand">
                 <div class="pCard1" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="pCard2" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="pCard3" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="pCard4" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
                 <div class="pCard5" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${pcard1}.png`)" />
+                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
                 </div>
             </div>
         </div>
@@ -56,20 +56,26 @@ export default {
     mounted() {
     },
     methods: {
+        deck() {
+            //set suits and ranks
+            this.myDeck = []
+            const suits = ["spade", "heart", "club", "diamond"]
+            const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+            //put deck together
+            for (let s = 0; s < this.suits.length; s++) {
+                this.selSuit = suits[s]
+                for (let r = 0; r < this.ranks.length; r++) {
+                    this.selRank = ranks[r]
+                    this.selCard = this.selSuit + this.selRank
+                    this.myDeck += this.selCard
+                }
+            }
+            console.log(this.myDeck)
+        },
         deal() {
-            //gen number and select at random
-            const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-            const numLen = nums.length
-            let selNum = Math.floor(Math.random() * numLen)
-            this.number = nums[selNum]
-            //gen suit and select at random
-            const suit = ["spade", "heart", "club", "diamond"]
-            const suitLen = suit.length
-            let selSuit = Math.floor(Math.random() * suitLen)
-            this.suit = suit[selSuit]
-            //put card together
-            this.pcard1 = this.suit + this.number
+            this.deck()
             this.dealt = true
+
             // output message to dealer
             let dealText = document.getElementById("dealerText")
             this.message = " YOU HIT"
@@ -84,9 +90,14 @@ export default {
     },
     data() {
         return {
-            suit: "spade",
-            number: 0,
-            pcard1: "spade0",
+            ranks: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+            suits: ['spade', 'heart', 'club', 'diamond'],
+            selSuit: "spade",
+            selRank: 0,
+            selCard: String,
+            myDeck: Array,
+            cards: ["heart8"],
+            dealt: ["heart8", "heart0"],
             dealt: false,
             message: String
         }
