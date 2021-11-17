@@ -32,7 +32,7 @@
             </div>
             <div class="playerHand">
                 <div class="pCard1" v-show="dealt">
-                    <img :src="require(`~/assets/cards/${suit}/${selected}.png`)" />
+                    <img :src="require(`~/assets/cards/${suit}/${rank}.png`)" />
                 </div>
                 <div class="pCard2" v-show="dealt">
                     <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
@@ -56,6 +56,10 @@ export default {
     mounted() {
     },
     methods: {
+        roll(arg) {
+            let rng = Math.floor(Math.random() * arg)
+            return rng
+        },
         deck() {
             //set suits and ranks
             this.myDeck = []
@@ -67,14 +71,13 @@ export default {
                 for (let r = 0; r < this.ranks.length; r++) {
                     this.selRank = ranks[r]
                     this.selCard = [this.selSuit, this.selRank]
-                    // this.myDeck += this.selCard
                     this.myDeck.push(this.selCard)
                 }
             }
         },
         deal() {
             this.deck()
-            let rng = Math.floor(Math.random() * this.myDeck.length)
+            let card = this.roll(this.myDeck.length)
             this.dealt = true
 
             // output message to dealer
@@ -92,13 +95,12 @@ export default {
     data() {
         return {
             suit: "spade",
-            selected: "1",
+            rank: "1",
             ranks: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
             suits: ['spade', 'heart', 'club', 'diamond'],
             selSuit: "spade",
             selRank: 0,
             selCard: String,
-            count: [0],
             myDeck: Array,
             cards: ["heart8"],
             dealt: false,
