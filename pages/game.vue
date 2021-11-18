@@ -102,7 +102,7 @@ export default {
             selRank: 0,
             selCard: String,
             myDeck: Array,
-            cards: ["heart8"],
+            cards: ["flipped0"],
             dealt: false,
             message: String
         }
