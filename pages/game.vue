@@ -82,13 +82,13 @@ export default {
 
             // output message to dealer
             let dealText = document.getElementById("dealerText")
-            this.message = " YOU HIT"
+            this.message = "YOU HIT"
             dealText.innerHTML = this.message
         },
         hide() {
             this.dealt = false
             let dealText = document.getElementById("dealerText")
-            this.message = " YOU STAY"
+            this.message = "YOU STAY"
             dealText.innerHTML = this.message
         }
     },
