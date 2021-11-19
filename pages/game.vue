@@ -95,6 +95,7 @@ export default {
         //  maybe loser gets to pick oppponents first card
         //  cute animations of my ogre guy holding a deck/hand of cards and reacting to plays
         //  only two buttons instead of four
+        //  REMOVE CARD FROM DECK AFTER ITS PUSHED
         roll(arg) {
             //simple rng roll
             let rng = Math.floor(Math.random() * arg)
