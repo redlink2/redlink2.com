@@ -3,48 +3,78 @@
     <div>
         <div class="container">
             <div class="opHand">
-                <div class="oCard1" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard1" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${opHand[0]}.png`)" />
                 </div>
-                <div class="oCard2" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
-                <div class="oCard3" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard2" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${opHand[1]}.png`)" />
                 </div>
-                <div class="oCard4" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
-                <div class="oCard5" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard3" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${opHand[2]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
+                </div>
+                <div class="oCard4" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${opHand[3]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
+                </div>
+                <div class="oCard5" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${opHand[4]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
             </div>
             <div class="btns1">
-                <button v-on:click="hide" class="btns">STAY</button>
-                <button v-on:click="hide" class="btns">FOLD</button>
+                <button v-on:click="stay" class="btns">STAY</button>
+                <button v-on:click="fold" class="btns">FOLD</button>
             </div>
             <div class="dealer">
                 <textarea name="DEALER" id="dealerText" cols="10" rows="2" readonly></textarea>
             </div>
             <div class="btns2">
                 <button v-on:click="deal" class="btns">HIT</button>
-                <button v-on:click="deck" class="btns">NEWGAME</button>
+                <button v-on:click="newGame" class="btns">NEWGAME</button>
             </div>
             <div class="playerHand">
-                <div class="pCard1" v-show="dealt">
-                    <img :src="require(`~/assets/cards/${suit}/${rank}.png`)" />
+                <div class="pCard1" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${pHand[0]}.png`)" />
                 </div>
-                <div class="pCard2" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
-                <div class="pCard3" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="pCard2" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${pHand[1]}.png`)" />
                 </div>
-                <div class="pCard4" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
-                <div class="pCard5" v-show="dealt">
-                    <img :src="require(`~/assets/playCards/${cards[0]}.png`)" />
+                <div class="pCard3" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${pHand[2]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
+                </div>
+                <div class="pCard4" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${pHand[3]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
+                </div>
+                <div class="pCard5" v-if="dealt">
+                    <img :src="require(`~/assets/cards/${pHand[4]}.png`)" />
+                </div>
+                <div class="oCard1" v-else>
+                    <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
             </div>
         </div>
@@ -54,55 +84,107 @@
 <script>
 export default {
     mounted() {
+        this.newGame()
     },
     methods: {
+        // game ideas:
+        //  goal is 23 not 21
+        //  ace = 8 only
+        //  cards are rolled once at newgame and then left flipped,
+        //  when clicked on they will flip over to their predetermined value
+        //  maybe loser gets to pick oppponents first card
+        //  cute animations of my ogre guy holding a deck/hand of cards and reacting to plays
+        //  only two buttons instead of four
         roll(arg) {
+            //simple rng roll
             let rng = Math.floor(Math.random() * arg)
             return rng
         },
-        deck() {
-            //set suits and ranks
+        hide() {
+            // flip cards
+            this.dealt = false
+        },
+        newGame() {
+            // flip cards
+            this.hide()
+            // create deck
+            this.mkDeck()
+            // output message to dealer
+            let dealText = document.getElementById("dealerText")
+            this.message = "NEW GAME"
+            dealText.innerHTML = this.message
+        },
+        mkDeck() {
+            //init myDeck, suits, and ranks
             this.myDeck = []
             const suits = ["spade", "heart", "club", "diamond"]
             const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+            let selCard = String
+            let selSuit = String
+            let selRank = 0
             //put deck together
             for (let s = 0; s < this.suits.length; s++) {
-                this.selSuit = suits[s]
+                selSuit = suits[s]
                 for (let r = 0; r < this.ranks.length; r++) {
-                    this.selRank = ranks[r]
-                    this.selCard = [this.selSuit, this.selRank]
-                    this.myDeck.push(this.selCard)
+                    selRank = ranks[r]
+                    selCard = [selSuit, selRank]
+                    this.myDeck.push(selCard)
                 }
             }
         },
         deal() {
-            this.deck()
-            let card = this.roll(this.myDeck.length)
+            this.playerDeal()
+            this.opDeal()
+            // display hand
             this.dealt = true
-
             // output message to dealer
             let dealText = document.getElementById("dealerText")
             this.message = "YOU HIT"
             dealText.innerHTML = this.message
         },
-        hide() {
-            this.dealt = false
+        playerDeal() {
+            this.pHand = []
+            // deal all of players hand
+            for (let c = 0; c < 5; c++) {
+                let pCard = this.roll(this.myDeck.length)
+                let selCard = this.myDeck[pCard]
+                let pushr = selCard[0] + "/" + selCard[1]
+                this.pHand.push(pushr)
+            }
+        },
+        opDeal() {
+            this.opHand = []
+            // deal all of ops hand
+            for (let c = 0; c < 5; c++) {
+                let opCard = this.roll(this.myDeck.length)
+                let selCard = this.myDeck[opCard]
+                let pushr = selCard[0] + "/" + selCard[1]
+                this.opHand.push(pushr)
+            }
+        },
+        stay() {
+            this.hide()
+            // output message to dealer
             let dealText = document.getElementById("dealerText")
             this.message = "YOU STAY"
+            dealText.innerHTML = this.message
+        },
+        fold() {
+            this.hide()
+            // output message to dealer
+            let dealText = document.getElementById("dealerText")
+            this.message = "YOU FOLD"
             dealText.innerHTML = this.message
         }
     },
     data() {
         return {
-            suit: "spade",
-            rank: "1",
             ranks: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
             suits: ['spade', 'heart', 'club', 'diamond'],
-            selSuit: "spade",
-            selRank: 0,
-            selCard: String,
             myDeck: Array,
-            cards: ["flipped0"],
+            cards: ["heart8"],
+            pHand: Array,
+            opHand: Array,
             dealt: false,
             message: String
         }
