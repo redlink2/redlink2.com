@@ -143,14 +143,22 @@ export default {
             this.message = "YOU HIT"
             dealText.innerHTML = this.message
         },
+        // idea: track an compare all 10 rolls to prevent duplicates?
         playerDeal() {
             this.pHand = []
             // deal all of players hand
-            for (let c = 0; c < 5; c++) {
-                let pCard = this.roll(this.myDeck.length)
-                let selCard = this.myDeck[pCard]
-                let pushr = selCard[0] + "/" + selCard[1]
-                this.pHand.push(pushr)
+            let deck = this.myDeck.length
+            if (deck >= 10) {
+                for (let c = 0; c < 5; c++) {
+                    let pCard = this.roll(this.myDeck.length)
+                    let selCard = this.myDeck[pCard]
+                    let pushr = selCard[0] + "/" + selCard[1]
+                    this.pHand.push(pushr)
+                    this.myDeck.splice(pCard, 1)
+                }
+            } else {
+                this.mkDeck()
+                this.playerDeal()
             }
         },
         opDeal() {
