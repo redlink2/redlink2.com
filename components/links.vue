@@ -112,6 +112,7 @@ export default {
 }
 #fit:hover {
 	cursor: pointer;
+	animation: slide-in 1000ms;
 }
 @keyframes slide-in {
 	0% {
@@ -123,9 +124,6 @@ export default {
 	100% {
 		transform: rotate(1turn);
 	}
-}
-#fit:active {
-	animation: slide-in 1000ms;
 }
 .links {
 	height: 100%;
