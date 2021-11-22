@@ -104,7 +104,8 @@ a {
 }
 #feet {
 	display: flex;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-evenly;
 	grid-area: feet;
 	color: var(--subYellow);
 	border-color: var(--primeYellow);
