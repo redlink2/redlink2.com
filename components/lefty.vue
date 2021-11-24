@@ -4,18 +4,22 @@
 
 <script>
 export default {
+	// it takes approx 14.5-16 seconds for text to pass viewable area on std monitor
+	// need to add method to change to another phrase after passing
 	mounted() {
-		const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?!@#$%^&*)-_=+]},.:;~';
-		const charLen = char.length;
+		let roll = Math.floor(Math.random() * this.phrases.length)
+		let chars = this.phrases[roll]
+		const charsLen = chars.length;
 		// at 74 length, it seems to cut off characters.
 		for (var i = 0; i < 64; i++) {
-			this.rng += char.charAt(Math.floor(Math.random() * charLen));
-			document.querySelector('#lefty').innerHTML = `<h1>` + this.rng + `</h1>`;
+			this.randy += chars.charAt(Math.floor(Math.random() * charsLen));
+			document.querySelector('#lefty').innerHTML = `<h1>` + this.randy + `</h1>`;
 		}
 	},
 	data() {
 		return {
-			rng: ""
+			phrases: ["redlink2", "permutations", "chaos", "aeiou", "trust", "unity", "manifest", "hidden", "third-eye", "trance"],
+			randy: ""
 		}
 	},
 }
