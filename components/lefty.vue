@@ -18,7 +18,18 @@ export default {
 	},
 	data() {
 		return {
-			phrases: ["redlink2", "permutations", "chaos", "aeiou", "trust", "unity", "manifest", "hidden", "third-eye", "trance"],
+			phrases: [
+				"redlink2",
+				"permutations",
+				"chaos",
+				"aeiou",
+				"trust",
+				"unity",
+				"manifest",
+				"hidden",
+				"third-eye",
+				"trance"
+			],
 			randy: ""
 		}
 	},
