@@ -46,34 +46,34 @@
                 <button v-on:click="newGame" class="btns">NEWGAME</button>
             </div>
             <div class="playerHand">
-                <div class="pCard1" v-if="dealt">
+                <div class="pCard1" v-if="dealtr[0[1]]">
                     <img :src="require(`~/assets/cards/${pHand[0]}.png`)" />
                 </div>
-                <div class="oCard1" v-else>
+                <div class="pCard1" v-else>
                     <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
                 <div class="pCard2" v-if="dealt">
                     <img :src="require(`~/assets/cards/${pHand[1]}.png`)" />
                 </div>
-                <div class="oCard1" v-else>
+                <div class="pCard1" v-else>
                     <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
                 <div class="pCard3" v-if="dealt">
                     <img :src="require(`~/assets/cards/${pHand[2]}.png`)" />
                 </div>
-                <div class="oCard1" v-else>
+                <div class="pCard1" v-else>
                     <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
                 <div class="pCard4" v-if="dealt">
                     <img :src="require(`~/assets/cards/${pHand[3]}.png`)" />
                 </div>
-                <div class="oCard1" v-else>
+                <div class="pCard1" v-else>
                     <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
                 <div class="pCard5" v-if="dealt">
                     <img :src="require(`~/assets/cards/${pHand[4]}.png`)" />
                 </div>
-                <div class="oCard1" v-else>
+                <div class="pCard1" v-else>
                     <img :src="require(`~/assets/cards/flipped/0.png`)" />
                 </div>
             </div>
@@ -88,19 +88,14 @@ export default {
     },
     methods: {
         // game ideas:
-        //  goal is 23 not 21
-        //  ace = 8 only
         //  cards are rolled once at newgame and then left flipped,
         //  when clicked on they will flip over to their predetermined value
         //  maybe loser gets to pick oppponents first card
-        //  cute animations of my ogre guy holding a deck/hand of cards and reacting to plays
+        //  goal is 23 not 21
+        //  ace = 8 only
         //  only two buttons instead of four
+        //  cute animations of my ogre guy holding a deck/hand of cards and reacting to plays
         //  REMOVE CARD FROM DECK AFTER ITS PUSHED
-        roll(arg) {
-            //simple rng roll
-            let rng = Math.floor(Math.random() * arg)
-            return rng
-        },
         hide() {
             // flip cards
             this.dealt = false
@@ -114,6 +109,11 @@ export default {
             let dealText = document.getElementById("dealerText")
             this.message = "NEW GAME"
             dealText.innerHTML = this.message
+        },
+        roll(arg) {
+            //simple rng roll
+            let rng = Math.floor(Math.random() * arg)
+            return rng
         },
         mkDeck() {
             //init myDeck, suits, and ranks
