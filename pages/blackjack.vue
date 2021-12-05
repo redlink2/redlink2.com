@@ -36,7 +36,7 @@
             </div>
             <div class="btns1">
                 <button v-on:click="stay" class="btns">STAY</button>
-                <button v-on:click="fold" class="btns">FOLD</button>
+                <button v-on:click="exit" class="btns">EXIT</button>
             </div>
             <div class="dealer">
                 <textarea name="DEALER" id="dealerText" cols="10" rows="2" readonly></textarea>
@@ -188,6 +188,9 @@ export default {
             let dealText = document.getElementById("dealerText")
             this.message = "YOU FOLD"
             dealText.innerHTML = this.message
+        },
+        exit() {
+            window.location.href = "https://redlink2.com"
         }
     },
     data() {
