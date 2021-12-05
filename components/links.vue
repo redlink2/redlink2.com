@@ -47,18 +47,18 @@ export default {
 	methods: {
 		linkset1() {
 			link1.innerHTML = `<a href="` + this.github[0] + `">` + this.github[1] + `</a>`
-			link2.innerHTML = `<a href="` + this.jelly[0] + `">` + this.astral[1] + `</a>`
+			link2.innerHTML = `<a href="` + this.astral[0] + `">` + this.astral[1] + `</a>`
 			link3.innerHTML = `<a href="` + this.sidebar[0] + `">` + this.sidebar[1] + `</a>`
 		},
 		linkset2() {
-			link1.innerHTML = `<a href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
-			link2.innerHTML = `<a href="` + this.pihole[0] + `">` + this.pihole[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.game[0] + `">` + this.game[1] + `</a>`
+			link1.innerHTML = `<a href="` + this.blackjack[0] + `">` + this.blackjack[1] + `</a>`
+			link2.innerHTML = `<a href="` + this.issues[0] + `">` + this.issues[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.repo[0] + `">` + this.repo[1] + `</a>`
 		},
 		linkset3() {
 			link1.innerHTML = `<a href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
 			link2.innerHTML = `<a href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.mega[0] + `">` + this.mega[1] + `</a>`
+			link3.innerHTML = `<a href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
 		},
 	},
 	data() {
@@ -69,20 +69,23 @@ export default {
 			hue2: 0,
 			hue3: 0,
 			suffix: "deg)",
-			//tab1
+			//tab1 default
 			github: ["https://github.com", "Github"],
 			astral: ["https://app.astralapp.com", "Astral"],
 			sidebar: ["https://sidebar.io", "Sidebar"],
-			//tab2
+			//tab2 default
 			jelly: ["http://10.0.0.8:8096", "Jellyfin"],
 			pihole: ["http://10.0.0.22/admin", "PiHole"],
 			router: ["http://10.0.0.1", "Router"],
-			//tab3
+			//tab3 default
 			proton: ["https://mail.protonmail.com", "ProtonMail"],
 			codecad: ["https://codecademy.com/learn", "Codecademy"],
 			mega: ["https://mega.nz", "Mega"],
-			//working
-			game: ["https://redlink2.com/game", "Game WIP"]
+			//custom
+			game: ["https://redlink2.com/game", "Game WIP"],
+			blackjack: ["https://redlink2.com/blackjack", "Blackjack WIP"],
+			repo: ["https://github.com/redlink2/redlink2.com", "Repo"],
+			issues: ["https://github.com/redlink2/redlink2.com/issues/new", "Problems?"],
 		}
 	},
 }
