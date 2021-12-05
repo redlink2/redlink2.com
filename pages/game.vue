@@ -198,8 +198,8 @@ export default {
             cards: ["heart8"],
             pHand: Array,
             opHand: Array,
+            message: String,
             dealt: false,
-            message: String
         }
     },
 }
