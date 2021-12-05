@@ -176,7 +176,7 @@ export default {
             }
         },
         stay() {
-            this.hide()
+            // this.hide()
             // output message to dealer
             let dealText = document.getElementById("dealerText")
             this.message = "YOU STAY"
