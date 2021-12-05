@@ -36,7 +36,7 @@
             </div>
             <div class="btns1">
                 <button v-on:click="stay" class="btns">STAY</button>
-                <nuxt-link to="/index" class="btns">EXIT</nuxt-link>
+                <nuxt-link to="/" class="btns">EXIT</nuxt-link>
             </div>
             <div class="dealer">
                 <textarea name="DEALER" id="dealerText" cols="10" rows="2" readonly></textarea>
@@ -258,6 +258,7 @@ body {
     color: black;
     background-color: white;
     cursor: pointer;
+    font-size: 150%;
     text-decoration: none;
 }
 .btns2 {
@@ -282,7 +283,7 @@ body {
     overflow: auto;
     height: 75%;
     width: 75%;
-    font-size: 1000%;
+    font-size: 800%;
     text-align: center;
 }
 .pCard1 {
