@@ -46,7 +46,7 @@
                 <button v-on:click="newGame" class="btns">NEWGAME</button>
             </div>
             <div class="playerHand">
-                <div class="pCard1" v-if="dealtr[0[1]]">
+                <div class="pCard1" v-if="dealt">
                     <img :src="require(`~/assets/cards/${pHand[0]}.png`)" />
                 </div>
                 <div class="pCard1" v-else>
@@ -115,6 +115,10 @@ export default {
             let rng = Math.floor(Math.random() * arg)
             return rng
         },
+        flipper(num) {
+            let card = num
+            this.card
+        },
         mkDeck() {
             //init myDeck, suits, and ranks
             this.myDeck = []
@@ -172,7 +176,7 @@ export default {
             }
         },
         stay() {
-            this.hide()
+            // this.hide()
             // output message to dealer
             let dealText = document.getElementById("dealerText")
             this.message = "YOU STAY"
