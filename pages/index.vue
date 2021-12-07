@@ -12,7 +12,7 @@
 			</div>
 			<div class="bord0" id="feet">
 				<Search />
-				<!-- <Linkto /> -->
+				<Notif />
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 body {
 	background-color: black;
 }
-a {
+a.linkr {
 	font-size: 4vh;
 	text-decoration: none;
 	color: var(--primeYellow);

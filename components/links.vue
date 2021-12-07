@@ -46,19 +46,19 @@ export default {
 	},
 	methods: {
 		linkset1() {
-			link1.innerHTML = `<a href="` + this.github[0] + `">` + this.github[1] + `</a>`
-			link2.innerHTML = `<a href="` + this.astral[0] + `">` + this.astral[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.sidebar[0] + `">` + this.sidebar[1] + `</a>`
+			link1.innerHTML = `<a class="linkr" href="` + this.github[0] + `">` + this.github[1] + `</a>`
+			link2.innerHTML = `<a class="linkr" href="` + this.astral[0] + `">` + this.astral[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.sidebar[0] + `">` + this.sidebar[1] + `</a>`
 		},
 		linkset2() {
-			link1.innerHTML = `<a href="` + this.blackjack[0] + `">` + this.blackjack[1] + `</a>`
-			link2.innerHTML = `<a href="` + this.issues[0] + `">` + this.issues[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.repo[0] + `">` + this.repo[1] + `</a>`
+			link1.innerHTML = `<a class="linkr" href="` + this.blackjack[0] + `">` + this.blackjack[1] + `</a>`
+			link2.innerHTML = `<a class="linkr" href="` + this.issues[0] + `">` + this.issues[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.repo[0] + `">` + this.repo[1] + `</a>`
 		},
 		linkset3() {
-			link1.innerHTML = `<a href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
-			link2.innerHTML = `<a href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
-			link3.innerHTML = `<a href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
+			link1.innerHTML = `<a class="linkr" href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
+			link2.innerHTML = `<a class="linkr" href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.jelly[0] + `">` + this.jelly[1] + `</a>`
 		},
 	},
 	data() {
