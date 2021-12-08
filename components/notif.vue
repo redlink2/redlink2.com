@@ -1,5 +1,5 @@
 <template>
-    <div id="notif">
+    <div id="notif" v-show="!seen">
         <p class="notif-text">
             email me at
             <a
@@ -9,6 +9,28 @@
         </p>
     </div>
 </template>
+<script>
+export default {
+    mounted() {
+        if (!localStorage.getItem('notif')) {
+            localStorage.setItem('notif', false)
+        } else {
+            let cookie = localStorage.getItem('notif')
+            if (cookie == "true") {
+                this.seen = true
+            } else {
+                localStorage.setItem('notif', true)
+            }
+        }
+
+    },
+    data() {
+        return {
+            seen: false,
+        }
+    },
+}
+</script>
 <style scoped>
 #notif {
     height: 8vh;
