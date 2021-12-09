@@ -36,6 +36,11 @@
 	--bgPurple: rgb(76, 0, 130);
 	--bgTest: pink;
 	--borderGray: rgb(128, 128, 128);
+
+	--new-blu: #2274a5;
+	--new-org: #f75c03;
+	--new-yel: #f1c40f;
+	--new-pnk: #d90368;
 }
 @font-face {
 	font-family: "panicsans";
