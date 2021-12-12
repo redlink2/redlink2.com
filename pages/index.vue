@@ -11,8 +11,9 @@
 				<Links />
 			</div>
 			<div class="bord0" id="feet">
-				<Search />
+				<!-- <Toggle /> -->
 				<Notif />
+				<Search />
 			</div>
 		</div>
 	</div>
