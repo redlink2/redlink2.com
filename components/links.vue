@@ -4,7 +4,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue1 + suffix }"
-					:src="require(`~/assets/circle.svg`)"
+					:src="require(`~/assets/${shape1}.svg`)"
 					v-on:click="linkset1"
 					id="fit"
 				/>
@@ -14,7 +14,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue2 + suffix }"
-					:src="require(`~/assets/tri.svg`)"
+					:src="require(`~/assets/${shape2}.svg`)"
 					v-on:click="linkset2"
 					id="fit"
 				/>
@@ -24,7 +24,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue3 + suffix }"
-					:src="require(`~/assets/square.svg`)"
+					:src="require(`~/assets/${shape3}.svg`)"
 					v-on:click="linkset3"
 					id="fit"
 				/>
@@ -43,6 +43,9 @@ export default {
 		this.hue1 = Math.floor(Math.random() * 333)
 		this.hue2 = Math.floor(Math.random() * 333)
 		this.hue3 = Math.floor(Math.random() * 333)
+		this.shape1 = "circle"
+		this.shape2 = "tri"
+		this.shape3 = "square"
 	},
 	methods: {
 		linkset1() {
@@ -63,6 +66,9 @@ export default {
 	},
 	data() {
 		return {
+			shape1: "tri",
+			shape2: "tri",
+			shape3: "tri",
 			//hue-rotate randomizer
 			hueRotate: "hue-rotate(",
 			hue1: 0,
