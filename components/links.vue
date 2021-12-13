@@ -43,9 +43,10 @@ export default {
 		this.hue1 = Math.floor(Math.random() * 333)
 		this.hue2 = Math.floor(Math.random() * 333)
 		this.hue3 = Math.floor(Math.random() * 333)
-		this.shape1 = "circle"
-		this.shape2 = "tri"
-		this.shape3 = "square"
+		// rand gen shapes1/2/3
+		this.shape1 = this.shapes[Math.floor(Math.random() * this.shapes.length)]
+		this.shape2 = this.shapes[Math.floor(Math.random() * this.shapes.length)]
+		this.shape3 = this.shapes[Math.floor(Math.random() * this.shapes.length)]
 	},
 	methods: {
 		linkset1() {
@@ -69,6 +70,11 @@ export default {
 			shape1: "tri",
 			shape2: "tri",
 			shape3: "tri",
+			shapes: [
+				"tri",
+				"square",
+				"circle"
+			],
 			//hue-rotate randomizer
 			hueRotate: "hue-rotate(",
 			hue1: 0,
