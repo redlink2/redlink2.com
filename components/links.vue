@@ -67,6 +67,7 @@ export default {
 	},
 	data() {
 		return {
+			//shape randomizer
 			shape1: "tri",
 			shape2: "tri",
 			shape3: "tri",
