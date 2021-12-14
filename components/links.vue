@@ -40,9 +40,9 @@ export default {
 		var link2 = document.querySelector('#link2')
 		var link3 = document.querySelector('#link3')
 		// rand gen hue1/2/3
-		this.hue1 = Math.floor(Math.random() * 333)
-		this.hue2 = Math.floor(Math.random() * 333)
-		this.hue3 = Math.floor(Math.random() * 333)
+		this.hue1 = this.hues[Math.floor(Math.random() * this.hues.length)]
+		this.hue2 = this.hues[Math.floor(Math.random() * this.hues.length)]
+		this.hue3 = this.hues[Math.floor(Math.random() * this.hues.length)]
 		// rand gen shapes1/2/3
 		this.shape1 = this.shapes[Math.floor(Math.random() * this.shapes.length)]
 		this.shape2 = this.shapes[Math.floor(Math.random() * this.shapes.length)]
@@ -77,6 +77,13 @@ export default {
 				"circle"
 			],
 			//hue-rotate randomizer
+			hues: [
+				88, //green
+				180, //teal
+				250, //blue
+				300, //purp
+				335, //pink
+			],
 			hueRotate: "hue-rotate(",
 			hue1: 0,
 			hue2: 0,
