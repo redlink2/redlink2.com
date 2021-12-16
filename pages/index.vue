@@ -12,7 +12,7 @@
 			</div>
 			<div class="bord0" id="feet">
 				<!-- <Toggle /> -->
-				<Notif />
+				<!-- <Notif /> -->
 				<Search />
 			</div>
 		</div>
