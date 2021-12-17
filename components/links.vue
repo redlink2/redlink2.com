@@ -78,7 +78,6 @@ export default {
 			],
 			//hue-rotate randomizer
 			hues: [
-				88, //green
 				180, //teal
 				250, //blue
 				300, //purp
