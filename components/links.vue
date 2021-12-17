@@ -52,7 +52,7 @@ export default {
 		linkset1() {
 			link1.innerHTML = `<a class="linkr" href="` + this.github[0] + `">` + this.github[1] + `</a>`
 			link2.innerHTML = `<a class="linkr" href="` + this.repo[0] + `">` + this.repo[1] + `</a>`
-			link3.innerHTML = `<a class="linkr" href="` + this.cldflr[0] + `">` + this.cldflr[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.ghrl2[0] + `">` + this.ghrl2[1] + `</a>`
 		},
 		linkset2() {
 			link1.innerHTML = `<a class="linkr" href="` + this.email[0] + `">` + this.email[1] + `</a>`
@@ -97,6 +97,7 @@ export default {
 			cldflr: ["https://dash.cloudflare.com", "Cloudflare"],
 			// Development
 			github: ["https://github.com", "Github"],
+			ghrl2: ["https://github.com/redlink2", "My Profile"],
 			codecad: ["https://codecademy.com/learn", "Codecademy"],
 			astral: ["https://app.astralapp.com", "Astral"],
 			sidebar: ["https://sidebar.io", "Sidebar"],
