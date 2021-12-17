@@ -45,7 +45,7 @@
 }
 @font-face {
 	font-family: "panicsans";
-	src: url("~/assets/panicsans.ttf");
+	src: url("~/assets/fonts/panicsans.ttf");
 }
 * {
 	font-family: "panicsans";

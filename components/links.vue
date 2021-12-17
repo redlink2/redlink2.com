@@ -4,7 +4,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue1 + suffix }"
-					:src="require(`~/assets/${shape1}.svg`)"
+					:src="require(`~/assets/shapes/${shape1}.svg`)"
 					v-on:click="linkset1"
 					id="fit"
 				/>
@@ -14,7 +14,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue2 + suffix }"
-					:src="require(`~/assets/${shape2}.svg`)"
+					:src="require(`~/assets/shapes/${shape2}.svg`)"
 					v-on:click="linkset2"
 					id="fit"
 				/>
@@ -24,7 +24,7 @@
 			<div class="bound">
 				<img
 					:style="{ filter: hueRotate + hue3 + suffix }"
-					:src="require(`~/assets/${shape3}.svg`)"
+					:src="require(`~/assets/shapes/${shape3}.svg`)"
 					v-on:click="linkset3"
 					id="fit"
 				/>
