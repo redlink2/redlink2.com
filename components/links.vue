@@ -93,7 +93,7 @@ export default {
 			blackjack: ["https://redlink2.com/blackjack", "Blackjack WIP"],
 			// Project
 			issues: ["https://github.com/redlink2/redlink2.com/issues/new", "Problems?"],
-			repo: ["https://github.com/redlink2/redlink2.com", "Repo"],
+			repo: ["https://github.com/redlink2/redlink2.com", "This Repo"],
 			cldflr: ["https://dash.cloudflare.com", "Cloudflare"],
 			// Development
 			github: ["https://github.com", "Github"],
