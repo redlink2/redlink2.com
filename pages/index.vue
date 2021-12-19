@@ -14,6 +14,8 @@
 				<!-- <Toggle /> -->
 				<!-- <Notif /> -->
 				<Search />
+				<!-- <Link /> -->
+				<!-- <Api /> -->
 			</div>
 		</div>
 	</div>
