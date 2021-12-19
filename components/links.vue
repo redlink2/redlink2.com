@@ -48,9 +48,7 @@ export default {
 		const s2 = document.querySelector(".s2")
 		const s3 = document.querySelector(".s3")
 		// randomly generate shapes and their colors
-		s2.innerHTML = this.shapes[Math.floor(Math.random() * this.shapes.length)] + ` style="fill: ` + this.colors[Math.floor(Math.random() * this.colors.length)] + `" />`
-		s3.innerHTML = this.shapes[Math.floor(Math.random() * this.shapes.length)] + ` style="fill: ` + this.colors[Math.floor(Math.random() * this.colors.length)] + `" />`
-		s1.innerHTML = this.shapes[Math.floor(Math.random() * this.shapes.length)] + ` style="fill: ` + this.colors[Math.floor(Math.random() * this.colors.length)] + `" />`
+		this.getShapes()
 	},
 	methods: {
 		linkset1() {
@@ -68,11 +66,57 @@ export default {
 			link2.innerHTML = `<a class="linkr" href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
 			link3.innerHTML = `<a class="linkr" href="` + this.mega[0] + `">` + this.mega[1] + `</a>`
 		},
+		roll(arg) {
+			//simple rng roll
+			let rng = Math.floor(Math.random() * arg)
+			return rng
+		},
+		mkShapes() {
+			this.shaper = []
+			const shapes = [`<rect width="100" height="100"`, `<circle cx="50" cy="50" r="50"`, `<polygon points="-10,100 110,100 50,0"`]
+			const styles = ` style="fill: `
+			const colors = this.colors
+			const cap = `" />`
+			let selShape = String
+			let selColor = String
+			let Shaped = String
+			for (let s = 0; s < shapes.length; s++) {
+				selShape = shapes[s]
+				for (let c = 0; c < this.colors.length; c++) {
+					selColor = colors[c]
+					Shaped = selShape + styles + selColor + cap
+					this.shaper.push(Shaped)
+				}
+			}
+		},
+		getShapes() {
+			// mkShapes first
+			this.mkShapes()
+			// selectors for shapes
+			const s1 = document.querySelector(".s1")
+			const s2 = document.querySelector(".s2")
+			const s3 = document.querySelector(".s3")
+			// choice for rolls
+			let choice = Number
+			// randomly generate shapes and their colors
+			choice = this.roll(this.shaper.length)
+			let shape1 = this.shaper[choice]
+			s1.innerHTML = shape1
+			this.shaper.splice(choice, choice)
+			choice = this.roll(this.shaper.length)
+			let shape2 = this.shaper[choice]
+			s2.innerHTML = shape2
+			this.shaper.splice(choice, choice)
+			choice = this.roll(this.shaper.length)
+			let shape3 = this.shaper[choice]
+			s3.innerHTML = shape3
+			this.shaper.splice(choice, choice)
+		}
 	},
 	data() {
 		return {
 			// Shapes
-			shapes: [`<rect width="100" height="100"`, `<circle cx="50" cy="50" r="50"`, `<polygon points="-10,100 110,100 50,0"`],
+			shaper: [],
 			// Colors
 			colors: [
 				"#d90368", //red
