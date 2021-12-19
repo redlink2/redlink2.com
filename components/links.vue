@@ -74,11 +74,12 @@ export default {
 			// Shapes
 			shapes: [`<rect width="100" height="100"`, `<circle cx="50" cy="50" r="50"`, `<polygon points="-10,100 110,100 50,0"`],
 			// Colors
-			colors: ["red",
-				"#2274a5",
-				"#f75c03",
-				"#f1c40f",
-				"#d90368",
+			colors: [
+				"#d90368", //red
+				"#2274a5", //blue
+				"#7A9B76", //green
+				"#f1c40f", //yellow
+				"#f75c03", //orange
 			],
 			// LINKS
 			// Pages
