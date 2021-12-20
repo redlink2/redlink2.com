@@ -16,9 +16,8 @@
             <p v-if="$fetchState.pending">Fetching...</p>
             <p v-else-if="$fetchState.error">An error occurred :(</p>
             <div v-else>
-                <h2>API Test</h2>
+                <h2>Color Test</h2>
                 <ul>
-                    <!-- <li v-for="user of users">{{ user.name }} - {{ user.phrase }} - {{ user.etc }}</li> -->
                     <div id="apiColor" :style="color">{{ color }}</div>
                 </ul>
             </div>
