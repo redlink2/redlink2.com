@@ -1,6 +1,6 @@
 <template>
     <div id="switchContain">
-        <nuxt-link to="api" id="displaced">API!</nuxt-link>
+        <nuxt-link to="nav" id="displaced">LINKS!</nuxt-link>
     </div>
 </template>
 <script>
@@ -12,7 +12,7 @@ export default {
     },
 }
 </script>
-<style>
+<style scoped>
 #switchContain {
     display: flex;
     justify-content: center;

@@ -48,9 +48,3 @@ export default {
     },
 }
 </script>
-<style>
-body {
-    background-color: cadetblue;
-    color: brown;
-}
-</style>
