@@ -176,9 +176,17 @@ export default {
 }
 #fit:hover {
 	cursor: pointer;
-	animation: slide-in 1000ms;
 }
-@keyframes slide-in {
+.s1:hover {
+	animation: spin 800ms linear infinite;
+}
+.s2:hover {
+	animation: scribble 800ms linear infinite;
+}
+.s3:hover {
+	animation: bouncy 800ms linear infinite;
+}
+@keyframes spin {
 	0% {
 		transform: rotate(0turn);
 	}
@@ -187,6 +195,42 @@ export default {
 	}
 	100% {
 		transform: rotate(1turn);
+	}
+}
+@keyframes scribble {
+	0% {
+		transform: skew(0deg);
+		filter: hue-rotate(0deg);
+	}
+	25% {
+		transform: skew(50deg);
+		filter: hue-rotate(50deg);
+	}
+	50% {
+		transform: skew(-50deg);
+		filter: hue-rotate(150deg);
+	}
+	75% {
+		transform: skew(50deg);
+		filter: hue-rotate(250deg);
+	}
+	100% {
+		transform: skew(0deg);
+		filter: hue-rotate(0deg);
+	}
+}
+@keyframes bouncy {
+	0% {
+		transform: translateY(0px);
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		transform: translateY(-10px);
+		filter: hue-rotate(180deg);
+	}
+	100% {
+		transform: translateY(0px);
+		filter: hue-rotate(0deg);
 	}
 }
 .links {
