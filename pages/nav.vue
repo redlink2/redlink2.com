@@ -8,10 +8,10 @@
                 <nuxt-link id="index" class="lines" to="/">index</nuxt-link>
             </div>
             <div class="dev" @click="clickBlackjack">
-                <nuxt-link id="blackjack" class="lines" to="blackjack">blackjack</nuxt-link>
+                <nuxt-link id="blackjack" class="lines" to="../blackjack">blackjack</nuxt-link>
             </div>
             <div class="dev" @click="clickApi">
-                <nuxt-link id="api" class="lines" to="api">API</nuxt-link>
+                <nuxt-link id="api" class="lines" to="../api">API</nuxt-link>
             </div>
         </div>
     </div>
