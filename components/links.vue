@@ -59,12 +59,12 @@ export default {
 		linkset2() {
 			link1.innerHTML = `<a class="linkr" href="` + this.email[0] + `">` + this.email[1] + `</a>`
 			link2.innerHTML = `<a class="linkr" href="` + this.issues[0] + `">` + this.issues[1] + `</a>`
-			link3.innerHTML = `<a class="linkr" href="` + this.blackjack[0] + `">` + this.blackjack[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.nav[0] + `">` + this.nav[1] + `</a>`
 		},
 		linkset3() {
 			link1.innerHTML = `<a class="linkr" href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
 			link2.innerHTML = `<a class="linkr" href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
-			link3.innerHTML = `<a class="linkr" href="` + this.nav[0] + `">` + this.nav[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.mega[0] + `">` + this.mega[1] + `</a>`
 		},
 		roll(arg) {
 			//simple rng roll
