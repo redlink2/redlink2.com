@@ -64,7 +64,7 @@ export default {
 		linkset3() {
 			link1.innerHTML = `<a class="linkr" href="` + this.proton[0] + `">` + this.proton[1] + `</a>`
 			link2.innerHTML = `<a class="linkr" href="` + this.codecad[0] + `">` + this.codecad[1] + `</a>`
-			link3.innerHTML = `<a class="linkr" href="` + this.mega[0] + `">` + this.mega[1] + `</a>`
+			link3.innerHTML = `<a class="linkr" href="` + this.nav[0] + `">` + this.nav[1] + `</a>`
 		},
 		roll(arg) {
 			//simple rng roll
@@ -129,6 +129,7 @@ export default {
 			// Pages
 			email: ["mailto:redlink@redlink2.com", "Email me!"],
 			blackjack: ["https://redlink2.com/blackjack", "Blackjack WIP"],
+			nav: ["https://redlink2.com/nav", "Navigation"],
 			// Project
 			issues: ["https://github.com/redlink2/redlink2.com/issues/new", "Problems?"],
 			repo: ["https://github.com/redlink2/redlink2.com", "This Repo"],
