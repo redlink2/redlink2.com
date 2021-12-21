@@ -60,7 +60,7 @@ a {
 .dev:hover {
     margin-right: 30vw;
     margin-left: 30vw;
-    cursor: hover;
+    cursor: pointer;
     transition: width 1s;
 }
 .dev:nth-of-type(odd) {
