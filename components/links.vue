@@ -5,8 +5,8 @@
 				<svg
 					viewBox="0 0 100 100"
 					xmlns="https://www.w3.org/2000/svg"
-					id="fit"
-					class="s1"
+					class="fit"
+					id="s1"
 					v-on:click="linkset1"
 				>null</svg>
 			</div>
@@ -16,8 +16,8 @@
 				<svg
 					viewBox="0 0 100 100"
 					xmlns="https://www.w3.org/2000/svg"
-					id="fit"
-					class="s2"
+					class="fit"
+					id="s2"
 					v-on:click="linkset2"
 				>null</svg>
 			</div>
@@ -27,8 +27,8 @@
 				<svg
 					viewBox="0 0 100 100"
 					xmlns="https://www.w3.org/2000/svg"
-					id="fit"
-					class="s3"
+					class="fit"
+					id="s3"
 					v-on:click="linkset3"
 				>null</svg>
 			</div>
@@ -43,10 +43,6 @@ export default {
 		var link1 = document.querySelector('#link1')
 		var link2 = document.querySelector('#link2')
 		var link3 = document.querySelector('#link3')
-		// selectors for shapes
-		const s1 = document.querySelector(".s1")
-		const s2 = document.querySelector(".s2")
-		const s3 = document.querySelector(".s3")
 		// randomly generate shapes and their colors
 		this.getShapes()
 	},
@@ -93,9 +89,9 @@ export default {
 			// mkShapes first
 			this.mkShapes()
 			// selectors for shapes
-			const s1 = document.querySelector(".s1")
-			const s2 = document.querySelector(".s2")
-			const s3 = document.querySelector(".s3")
+			const s1 = document.querySelector("#s1")
+			const s2 = document.querySelector("#s2")
+			const s3 = document.querySelector("#s3")
 			// choice for rolls
 			let choice = Number
 			// randomly generate shapes and their colors
@@ -168,22 +164,22 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
-#fit {
+.fit {
 	display: flex;
 	width: 50%;
 	height: 50%;
 	filter: hue-rotate(0deg);
 }
-#fit:hover {
+.fit:hover {
 	cursor: pointer;
 }
-.s1:hover {
+#s1:hover {
 	animation: spin 800ms linear infinite;
 }
-.s2:hover {
+#s2:hover {
 	animation: scribble 800ms linear infinite;
 }
-.s3:hover {
+#s3:hover {
 	animation: bouncy 800ms linear infinite;
 }
 @keyframes spin {
