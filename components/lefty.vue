@@ -7,12 +7,17 @@ export default {
 	mounted() {
 		this.fromHere()
 		if (this.pardner == true) {
-			this.anagrammer()
+			// this.anagrammer()
+			this.newYears()
 		} else {
-			this.notFromHere()
+			// this.notFromHere()
+			this.newYears()
 		}
 	},
 	methods: {
+		newYears() {
+			document.querySelector('#lefty').innerHTML = `<h1>HAPPY NEW YEAR 2022!!!</h1>`
+		},
 		fromHere() {
 			if (!localStorage.getItem('reg')) {
 				localStorage.setItem('reg', false)
