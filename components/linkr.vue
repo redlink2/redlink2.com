@@ -1,8 +1,8 @@
 <template>
 	<div id="contain">
-		<div id="link1" class="righty">Press</div>
-		<div id="link2" class="righty">a</div>
-		<div id="link3" class="righty">shape</div>
+		<div id="link1" class="before">Press</div>
+		<div id="link2" class="before">a</div>
+		<div id="link3" class="before">shape</div>
 	</div>
 </template>
 
@@ -14,7 +14,7 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 }
-.righty {
+.before {
 	font-size: 4vh;
 	text-decoration: none;
 	color: var(--altBlue);

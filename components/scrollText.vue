@@ -1,5 +1,5 @@
 <template>
-	<div id="lefty"></div>
+	<div id="scroller"></div>
 </template>
 
 <script>
@@ -7,16 +7,14 @@ export default {
 	mounted() {
 		this.fromHere()
 		if (this.pardner == true) {
-			// this.anagrammer()
-			this.newYears()
+			this.anagrammer()
 		} else {
-			// this.notFromHere()
-			this.newYears()
+			this.notFromHere()
 		}
 	},
 	methods: {
 		newYears() {
-			document.querySelector('#lefty').innerHTML = `<h1>HAPPY NEW YEAR 2022!!!</h1>`
+			document.querySelector('#scroller').innerHTML = `<h1>HAPPY NEW YEAR 2022!!!</h1>`
 		},
 		fromHere() {
 			if (!localStorage.getItem('reg')) {
@@ -31,7 +29,7 @@ export default {
 			}
 		},
 		notFromHere() {
-			document.querySelector('#lefty').innerHTML = `<h1>` + this.stranger[Math.floor(Math.random() * this.stranger.length)] + `</h1>`
+			document.querySelector('#scroller').innerHTML = `<h1>` + this.stranger[Math.floor(Math.random() * this.stranger.length)] + `</h1>`
 
 		},
 		anagrammer() {
@@ -43,7 +41,7 @@ export default {
 			// at 74 length, it seems to cut off characters.
 			for (var i = 0; i < 64; i++) {
 				this.randy += chars.charAt(Math.floor(Math.random() * charsLen))
-				document.querySelector('#lefty').innerHTML = `<h1>` + this.randy + `</h1>`
+				document.querySelector('#scroller').innerHTML = `<h1>` + this.randy + `</h1>`
 			}
 		}
 	},
@@ -74,19 +72,14 @@ export default {
 </script>
 
 <style scoped>
-#lefty {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding-right: 180%;
+#scroller {
 	white-space: nowrap;
 	font-size: 3vh;
 	color: var(--subGreen);
 	overflow: scroll;
 	animation: loopText 15000ms infinite linear;
 }
+/* gotta be a better way to do this... */
 @keyframes loopText {
 	from {
 		transform: translateX(100%);
