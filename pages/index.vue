@@ -1,28 +1,27 @@
 <template>
-	<div id="center">
-		<div class="bord0" id="grid-container">
-			<div class="bord0" id="leftarm">
-				<Lefty />
-			</div>
-			<div class="bord0" id="rightarm">
-				<Righty />
-			</div>
-			<div class="bord0" id="belly">
-				<Links />
-			</div>
-			<div class="bord0" id="feet">
-				<!-- <Toggle /> -->
-				<!-- <Notif /> -->
-				<Search />
-				<!-- <Link /> -->
-				<!-- <Api /> -->
-			</div>
-		</div>
+	<div id="void">
+		<!--
+			model should be something like this:
+			vertical blog
+			content is vertical center with 20% margins on left and right side
+			first div should be a title composed of shapes
+			second should be a nav like sticky post
+			subsequent posts should probably thought of otherwise no scroll and focus on the nav
+			in the margins should be something eye candy / interactive and probably randomized
+			colors should be deep dark navy / hot pink / sharp reds / and maybe some accent orange yellow green blue
+			should all be animated heavily with :hover and maybe gifs? but keep it accessible
+			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
+		-->
 	</div>
 </template>
 
 <style>
 :root {
+	/* colors to stay */
+	--bgDark: rgb(45, 25, 50);
+	--new-pnk: #d90368;
+	--test-pnk: #ee72f1;
+	/* colors to go */
 	--primeRed: rgb(255, 0, 0);
 	--subRed: rgb(178, 34, 34);
 
@@ -37,13 +36,11 @@
 	--subYellow: rgb(255, 166, 0);
 
 	--bgPurple: rgb(76, 0, 130);
-	--bgTest: pink;
 	--borderGray: rgb(128, 128, 128);
 
 	--new-blu: #2274a5;
 	--new-org: #f75c03;
 	--new-yel: #f1c40f;
-	--new-pnk: #d90368;
 }
 @font-face {
 	font-family: "panicsans";
@@ -51,80 +48,9 @@
 }
 * {
 	font-family: "panicsans";
-	scrollbar-width: none;
+	/* scrollbar-width: none; */
 }
 body {
-	background-color: black;
-}
-a.linkr {
-	font-size: 4vh;
-	text-decoration: none;
-	color: var(--primeYellow);
-}
-#center {
-	display: flex;
-	justify-content: center;
-}
-#grid-container {
-	height: 96.6vh;
-	width: 97.9vw;
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(7, 1fr);
-	gap: 3px 2px;
-	grid-template-areas:
-		"leftarm leftarm leftarm rightarm rightarm rightarm"
-		"leftarm leftarm leftarm rightarm rightarm rightarm"
-		"leftarm leftarm leftarm rightarm rightarm rightarm"
-		"belly belly belly belly belly belly"
-		"belly belly belly belly belly belly"
-		"belly belly belly belly belly belly"
-		"feet feet feet feet feet feet";
-	text-align: center;
-	border-style: dashed;
-	border-color: var(--borderGray);
-}
-.bord0 {
-	border-style: ridge;
-	border-width: 8px;
-	background-color: var(--bgPurple);
-}
-.bord1 {
-	border-style: ridge;
-	border-width: 8px;
-	background-color: var(--bgTest);
-}
-#rightarm {
-	grid-area: rightarm;
-	color: var(--subBlue);
-	border-color: var(--primeBlue);
-}
-#leftarm {
-	grid-area: leftarm;
-	overflow: auto;
-	color: var(--subGreen);
-	border-color: var(--primeGreen);
-}
-#belly {
-	grid-area: belly;
-	color: var(--subRed);
-	border-color: var(--primeRed);
-}
-#feet {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	grid-area: feet;
-	color: var(--subYellow);
-	border-color: var(--primeYellow);
-}
-@media (max-width: 650px) {
-	html {
-		overflow: hidden;
-		height: 100%;
-	}
-	#grid-container {
-		height: 95vh;
-	}
+	background-color: var(--bgDark);
 }
 </style>
