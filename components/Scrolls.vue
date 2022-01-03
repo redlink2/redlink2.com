@@ -1,5 +1,5 @@
 <template>
-	<div id="scroller"></div>
+	<div id="scrolls"></div>
 </template>
 
 <script>
@@ -13,9 +13,6 @@ export default {
 		}
 	},
 	methods: {
-		newYears() {
-			document.querySelector('#scroller').innerHTML = `<h1>HAPPY NEW YEAR 2022!!!</h1>`
-		},
 		fromHere() {
 			if (!localStorage.getItem('reg')) {
 				localStorage.setItem('reg', false)
@@ -29,7 +26,7 @@ export default {
 			}
 		},
 		notFromHere() {
-			document.querySelector('#scroller').innerHTML = `<h1>` + this.stranger[Math.floor(Math.random() * this.stranger.length)] + `</h1>`
+			document.querySelector('#scrolls').innerHTML = `<h1>` + this.stranger[Math.floor(Math.random() * this.stranger.length)] + `</h1>`
 
 		},
 		anagrammer() {
@@ -41,7 +38,7 @@ export default {
 			// at 74 length, it seems to cut off characters.
 			for (var i = 0; i < 64; i++) {
 				this.randy += chars.charAt(Math.floor(Math.random() * charsLen))
-				document.querySelector('#scroller').innerHTML = `<h1>` + this.randy + `</h1>`
+				document.querySelector('#scrolls').innerHTML = `<h1>` + this.randy + `</h1>`
 			}
 		}
 	},
@@ -49,9 +46,10 @@ export default {
 		return {
 			pardner: false,
 			stranger: [
-				"You're not from 'round here are you pardner?",
-				"This site is mostly RNG so refresh for changes!",
-				"Email me your qualms at redlink@redlink2.com!"
+				// "You're not from 'round here are you pardner?",
+				// "This site is mostly RNG so refresh for changes!",
+				// "Email me your qualms at redlink@redlink2.com!"
+				"youre new here yeah? cool this test passed"
 			],
 			phrases: [
 				"redlink2",
@@ -72,7 +70,7 @@ export default {
 </script>
 
 <style scoped>
-#scroller {
+#scrolls {
 	white-space: nowrap;
 	font-size: 3vh;
 	color: var(--subGreen);
