@@ -12,25 +12,23 @@
 			should all be animated heavily with :hover and maybe gifs? but keep it accessible
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
-		<ul id="index">
-			<li class="gems">
-				<!-- <Scrolls /> -->
-				<h1>tester</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum molestias, excepturi officiis enim aspernatur, sapiente laboriosam cumque modi, veniam tempora et possimus nostrum tempore illum dicta velit id vel. Nesciunt.</p>
-			</li>
-			<li class="gems">
-				<!-- <Scrolls /> -->
-				<h1>tester</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum molestias, excepturi officiis enim aspernatur, sapiente laboriosam cumque modi, veniam tempora et possimus nostrum tempore illum dicta velit id vel. Nesciunt.</p>
-			</li>
-			<li class="gems">
-				<!-- <Scrolls /> -->
-				<h1>tester</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum molestias, excepturi officiis enim aspernatur, sapiente laboriosam cumque modi, veniam tempora et possimus nostrum tempore illum dicta velit id vel. Nesciunt.</p>
-			</li>
-		</ul>
+		<Card
+			title="shoot"
+			content="Real ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatibus deserunt quisquam, eaque architecto accusamus, nemo ad incidunt eos corrupti odio consectetur ea sed perspiciatis dolorem delectus debitis, ipsam totam."
+		/>
+		<Card title="shotter" content="Real life color suit amount constructor anticipating elite." />
 	</div>
 </template>
+
+<script>
+import Card from '../components/card.vue'
+export default {
+	name: 'index',
+	components: {
+		Card,
+	}
+}
+</script>
 
 <style>
 :root {
@@ -78,18 +76,5 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-#index {
-	margin: 1vh 2vw 0vh 2vw;
-	padding: 1vh;
-}
-.gems {
-	background-color: black;
-	color: var(--new-org);
-	border: 0.3vh solid var(--new-pnk);
-	margin: 1vh 1vw 5vh 1vw;
-	padding: 3vh;
-	box-shadow: 0vh 2vh 3vh black;
-	list-style: none;
 }
 </style>
