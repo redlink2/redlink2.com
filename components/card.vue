@@ -34,9 +34,9 @@ export default {
     background-color: black;
     color: var(--new-org);
     border: 0.3vh solid var(--new-pnk);
-    margin: 1vh 1vw 5vh 1vw;
+    margin: 1vh 5vw 5vh 5vw;
     padding: 3vh;
-    box-shadow: 0vh 2vh 3vh black;
+    box-shadow: 0vh 3vh 3vh black;
     list-style: none;
 }
 </style>
