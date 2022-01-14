@@ -18,6 +18,7 @@
 			content="Real ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatibus deserunt quisquam, eaque architecto accusamus, nemo ad incidunt eos corrupti odio consectetur ea sed perspiciatis dolorem delectus debitis, ipsam totam."
 		/>
 		<Card title="shotter" content="Real life color suit amount constructor anticipating elite." />
+		<Card />
 	</div>
 </template>
 

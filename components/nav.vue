@@ -100,9 +100,9 @@ export default {
     justify-content: space-between;
     background-color: black;
     color: var(--new-org);
-    margin: 1vh 0vw 5vh 0vw;
+    margin: 3vh 0vw 8vh 0vw;
     padding: 3vh;
-    box-shadow: 0vh 3vh 3vh black;
+    box-shadow: 0vh 5vh 3vh black;
     list-style: none;
 }
 .svg {
