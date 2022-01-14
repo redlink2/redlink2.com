@@ -15,7 +15,8 @@
 		<Nav />
 		<Card
 			title="shoot"
-			content="Real ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatibus deserunt quisquam, eaque architecto accusamus, nemo ad incidunt eos corrupti odio consectetur ea sed perspiciatis dolorem delectus debitis, ipsam totam."
+			img="https://redlink2.com/coolsun.ico"
+			content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique. At quis risus sed vulputate odio ut enim. Volutpat odio facilisis mauris sit amet. Tellus elementum sagittis vitae et leo duis ut diam quam. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Maecenas pharetra convallis posuere morbi leo urna molestie at. Consectetur purus ut faucibus pulvinar. Senectus et netus et malesuada. Fusce id velit ut tortor pretium. Venenatis a condimentum vitae sapien pellentesque habitant. Nibh praesent tristique magna sit amet purus gravida quis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar."
 		/>
 		<Card title="shotter" content="Real life color suit amount constructor anticipating elite." />
 		<Card />
