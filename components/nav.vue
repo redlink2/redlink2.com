@@ -11,6 +11,7 @@
 <script>
 export default {
     mounted() {
+        this.bordo = this.bordprefix + this.bordcolor[this.roll(this.bordcolor.length)] + this.bordcap
         this.getShapes()
     },
     methods: {
@@ -79,9 +80,9 @@ export default {
                 "#f75c03", //orange
             ],
             bordprefix: "border: 0.3vh solid var(",
-            bordcolor: ["--new-blu", "--new-yel", "--new-org"],
+            bordcolor: ["--new-blu", "--new-yel", "--new-org", "--primeRed", "--primeGreen", "--primeBlue"],
             bordcap: ");",
-            bordo: "border: 0.3vh solid var(--new-yel);"
+            bordo: "border: 0.3vh solid gray;"
         }
     },
 }
@@ -99,7 +100,6 @@ export default {
     justify-content: space-between;
     background-color: black;
     color: var(--new-org);
-    border: 0.3vh solid var(--new-yel);
     margin: 1vh 0vw 5vh 0vw;
     padding: 3vh;
     box-shadow: 0vh 3vh 3vh black;
