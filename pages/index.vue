@@ -12,6 +12,7 @@
 			should all be animated heavily with :hover and maybe gifs? but keep it accessible
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
+		<Nav />
 		<Card
 			title="shoot"
 			content="Real ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatibus deserunt quisquam, eaque architecto accusamus, nemo ad incidunt eos corrupti odio consectetur ea sed perspiciatis dolorem delectus debitis, ipsam totam."
