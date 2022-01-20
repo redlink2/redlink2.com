@@ -49,6 +49,9 @@
 	font-family: "panicsans";
 	src: url("~/assets/fonts/panicsans.ttf");
 }
+::-webkit-scrollbar {
+	display: none;
+}
 * {
 	font-family: "panicsans";
 	scrollbar-width: none;
