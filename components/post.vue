@@ -27,7 +27,7 @@ export default {
     },
     async fetch() {
         try {
-            const res = await fetch('https://rl2-chaotic.com/posts/321368071952400453')
+            const res = await fetch('https://rl2-chaotic.com/posts/321372173293846593')
             const json = await res.json()
             this.title = json.data.title
             this.img = json.data.img
