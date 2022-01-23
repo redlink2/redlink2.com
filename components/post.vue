@@ -7,6 +7,7 @@
             <Card title="error" content="please refresh"/>
         </div>
         <div v-else>
+            <!-- <Card v-for="post in posts" :title="title" :img="img" :content="content" /> -->
             <Card :title="title" :img="img" :content="content" />
         </div>
     </div>
@@ -23,15 +24,21 @@ export default {
             title: '',
             img: '',
             content: '',
+            posts: [],
         }
     },
     async fetch() {
         try {
-            const res = await fetch('https://rl2-chaotic.com/posts/321372173293846593')
+            const res = await fetch('https://rl2-chaotic.com/posts/')
             const json = await res.json()
-            this.title = json.data.title
-            this.img = json.data.img
-            this.content = json.data.content
+            // for (let i = 0; i < json.length; i++) {
+            //     this.posts[i] = json.data[i].data.title
+            //     this.posts[i] = json.data[i].data.title
+            //     this.posts[i] = json.data[i].data.title
+            // }
+            this.title = json.data[0].data.title
+            this.img = json.data[0].data.img
+            this.content = json.data[0].data.content
             console.log("fetching complete")
         } catch (err) {
             this.title = 'Error'
