@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import Post from '../components/post.vue'
+import Post from "../components/post.vue";
 export default {
-	name: 'index',
+	name: "index",
 	components: {
 		Post
 	}
-}
+};
 </script>
 
 <style>

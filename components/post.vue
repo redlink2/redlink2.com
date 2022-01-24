@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="$fetchState.pending">
-            <Card title="loading..." content="please wait"/>
+            <Card title="loading..." content="please wait" />
         </div>
         <div v-else-if="$fetchState.error">
-            <Card title="error" content="please refresh"/>
+            <Card title="error" content="please refresh" />
         </div>
         <div v-else>
             <!-- <Card v-for="post in posts" :title="title" :img="img" :content="content" /> -->
