@@ -1,8 +1,18 @@
 <template>
     <div>
         <ul id="index">
-            <div v-if="$fetchState.pending">whoop</div>
-            <div v-if="$fetchState.error">whoopsiedaisy</div>
+            <div v-if="$fetchState.pending">
+                <li class="gems">
+                    <h1>Loading posts...</h1>
+                    <div>Please wait while posts are retrieved...</div>
+                </li>
+            </div>
+            <div v-if="$fetchState.error">
+                <li class="gems">
+                    <h1>Failed to retrieve posts.</h1>
+                    <div>Please refresh the page to try again.</div>
+                </li>
+            </div>
             <div v-else>
                 <div v-for="post in poster" v-bind:key="post.number">
                     <li class="gems">
