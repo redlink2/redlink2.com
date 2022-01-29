@@ -40,7 +40,7 @@ export default {
     },
     async fetch() {
         try {
-            const res = await fetch("https://rl2-chaotic.com/posts/");
+            const res = await fetch("https://rl2-chaotic.com/api/blog/posts/");
             const json = await res.json();
             for (let i = 0; i < json.data.length; i++) {
                 this.poster.push(json.data[i].data);
