@@ -13,16 +13,16 @@
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
 		<Nav />
-		<Post />
+		<Poster />
 	</div>
 </template>
 
 <script>
-import Post from "../components/post.vue";
+import Poster from "../components/poster.vue";
 export default {
 	name: "index",
 	components: {
-		Post
+		Poster
 	}
 };
 </script>
