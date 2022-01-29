@@ -12,6 +12,7 @@
 			should all be animated heavily with :hover and maybe gifs? but keep it accessible
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
+		<Bg />
 		<Nav />
 		<Posts />
 	</div>
