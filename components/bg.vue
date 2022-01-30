@@ -39,6 +39,9 @@
     </div>
 </template>
 <style>
+:root {
+    --pattern-channel-1: #f75c0396;
+}
 #bg {
     position: absolute;
     top: 0;
