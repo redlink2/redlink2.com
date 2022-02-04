@@ -40,12 +40,13 @@ export default {
     },
     async fetch() {
         try {
+            console.log("fetching posts...")
             const res = await fetch("https://rl2-chaotic.com/api/blog/posts/");
             const json = await res.json();
             for (let i = 0; i < json.data.length; i++) {
                 this.poster.push(json.data[i].data);
-                console.log(json.data[i].data.title);
             }
+            console.log("Posts fetched: " + this.poster.length);
             console.log("fetching complete");
         } catch (err) {
             console.log("error: " + err);
