@@ -13,7 +13,7 @@
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
 		<Bg />
-		<Nav />
+		<Banner />
 		<Posts />
 	</div>
 </template>
@@ -23,6 +23,8 @@ import Posts from "../components/posts.vue";
 export default {
 	name: "index",
 	components: {
+		Bg,
+		Banner,
 		Posts
 	}
 };
