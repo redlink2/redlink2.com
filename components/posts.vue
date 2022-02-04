@@ -48,6 +48,7 @@ export default {
             }
             console.log("Posts fetched: " + this.poster.length);
             console.log("fetching complete");
+            this.poster.reverse();
         } catch (err) {
             console.log("error: " + err);
         }
