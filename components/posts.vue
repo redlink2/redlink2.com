@@ -17,7 +17,7 @@
                 <div v-for="post in poster" v-bind:key="post.number">
                     <li class="gems">
                         <h1 class="header">{{ post.title }}</h1>
-                        <img :src="post.img" />
+                        <img v-if="post.imgExists" :src="post.img" />
                         <div v-if="post.content.length > 250">
                             <div v-if="!readmore">{{ post.content.slice(0, 250) }}</div>
                             <h3 v-if="!readmore" @click="morepls">readmore!</h3>
