@@ -1,5 +1,5 @@
 <template>
-    <div id="nav">
+    <div id="banner">
         <div class="shape" :style="bordo">
             <svg viewBox="0 0 100 100" xmlns="https://www.w3.org/2000/svg" class="svg" id="s1">null</svg>
             <svg viewBox="0 0 100 100" xmlns="https://www.w3.org/2000/svg" class="svg" id="s2">null</svg>
@@ -88,7 +88,7 @@ export default {
 }
 </script>
 <style scoped>
-#nav {
+#banner {
     margin: 1vh 2vw -4vh 2vw;
     padding: 1vh;
     display: flex;

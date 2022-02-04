@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import Bg from '../components/bg.vue';
+import Banner from '../components/banner.vue';
 import Posts from "../components/posts.vue";
 export default {
 	name: "index",
