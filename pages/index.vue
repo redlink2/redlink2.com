@@ -14,6 +14,7 @@
 		-->
 		<Bg />
 		<Banner />
+		<Nav />
 		<Posts />
 	</div>
 </template>
@@ -21,13 +22,15 @@
 <script>
 import Bg from '../components/bg.vue';
 import Banner from '../components/banner.vue';
+import Nav from '../components/nav.vue';
 import Posts from "../components/posts.vue";
 export default {
 	name: "index",
 	components: {
 		Bg,
 		Banner,
-		Posts
+		Nav,
+		Posts,
 	}
 };
 </script>
