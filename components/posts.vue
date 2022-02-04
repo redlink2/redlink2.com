@@ -77,6 +77,13 @@ export default {
 .gems:hover {
     animation: border-color-rotate 1s infinite;
 }
+.gems:hover > .header {
+    animation: color-rotate 1s infinite;
+}
+h3 {
+    color: var(--new-blu);
+    text-decoration: underline;
+}
 @keyframes border-color-rotate {
     0% {
         border-color: var(--new-blu);
@@ -88,9 +95,6 @@ export default {
         border-color: var(--new-blu);
     }
 }
-.gems:hover > .header {
-    animation: color-rotate 1s infinite;
-}
 @keyframes color-rotate {
     0% {
         color: var(--new-pnk);
@@ -101,9 +105,5 @@ export default {
     100% {
         color: var(--new-pnk);
     }
-}
-h3 {
-    color: var(--new-blu);
-    text-decoration: underline;
 }
 </style>
