@@ -16,7 +16,7 @@
             <div v-else>
                 <div v-for="post in poster" v-bind:key="post.number">
                     <li class="gems">
-                        <h1>{{ post.title }}</h1>
+                        <h1 class="header">{{ post.title }}</h1>
                         <img :src="post.img" />
                         <div v-if="post.content.length > 250">
                             <div v-if="!readmore">{{ post.content.slice(0, 250) }}</div>
@@ -73,6 +73,34 @@ export default {
     padding: 3vh;
     box-shadow: 0vh 3vh 3vh black;
     list-style: none;
+}
+.gems:hover {
+    animation: border-color-rotate 1s infinite;
+}
+@keyframes border-color-rotate {
+    0% {
+        border-color: var(--new-blu);
+    }
+    50% {
+        border-color: var(--new-pnk);
+    }
+    100% {
+        border-color: var(--new-blu);
+    }
+}
+.gems:hover > .header {
+    animation: color-rotate 1s infinite;
+}
+@keyframes color-rotate {
+    0% {
+        color: var(--new-pnk);
+    }
+    50% {
+        color: var(--new-blu);
+    }
+    100% {
+        color: var(--new-pnk);
+    }
 }
 h3 {
     color: var(--new-blu);
