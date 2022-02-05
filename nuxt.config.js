@@ -34,31 +34,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     '@nuxtjs/axios'
   ],
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      name: 'redlink2.com',
-      lang: 'en',
-      short_name: 'rl2',
-      description: 'Redlink2\'s website',
-      display: 'standalone',
-      orientation: 'portrait',
-      background_color: '#2d1932',
-      theme_color: '#e01440',
-      start_url: '/',
-      icons: [
-        {
-          src: '/public/coolsun.ico',
-          sizes: '512x512',
-          type: 'image/ico'
-        },
-      ]
-    }
-  },
 
   axios: {
 
