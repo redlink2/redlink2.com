@@ -69,7 +69,7 @@ export default {
 body {
 	background-image: url("../assets/bg.svg");
 	background-repeat: repeat;
-	background-size: 0.8%;
+	background-size: 1%;
 	margin: 0;
 	padding: 0;
 	background-color: var(--bgDark);
