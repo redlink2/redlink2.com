@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Nuxt3 files
+nuxt.d.ts
+.output
