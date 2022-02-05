@@ -12,7 +12,6 @@
 			should all be animated heavily with :hover and maybe gifs? but keep it accessible
 			first time page views should get a popup with details? maybe not but i mean a gentle barely noticed popup
 		-->
-		<Bg />
 		<Banner />
 		<Nav />
 		<Posts />
@@ -20,14 +19,12 @@
 </template>
 
 <script>
-import Bg from '../components/bg.vue';
 import Banner from '../components/banner.vue';
 import Nav from '../components/nav.vue';
 import Posts from "../components/posts.vue";
 export default {
 	name: "index",
 	components: {
-		Bg,
 		Banner,
 		Nav,
 		Posts,
@@ -70,6 +67,9 @@ export default {
 	font-family: "panicsans";
 }
 body {
+	background-image: url("../assets/bg.svg");
+	background-repeat: repeat;
+	background-size: 0.8%;
 	margin: 0;
 	padding: 0;
 	background-color: var(--bgDark);
