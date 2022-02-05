@@ -12,7 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/coolsun.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/public/coolsun.ico' }
     ]
   },
 
@@ -52,7 +52,7 @@ export default {
       start_url: '/',
       icons: [
         {
-          src: '/static/coolsun.ico',
+          src: '/public/coolsun.ico',
           sizes: '512x512',
           type: 'image/ico'
         },
