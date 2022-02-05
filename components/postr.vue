@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul id="index">
-            <!-- <div v-if="$fetchState.pending">
+            <div v-if="$fetchState.pending">
                 <li class="gems">
                     <h1>Loading posts...</h1>
                     <div>Please wait while posts are retrieved...</div>
@@ -26,40 +26,39 @@
                         <div v-if="post.content.length < 250">{{ post.content }}</div>
                     </li>
                 </div>
-            </div>-->
-            <li class="gems">
-                <h1 class="header">{{ data[0].posts.title }}</h1>
-            </li>
+            </div>
         </ul>
     </div>
 </template>
 <script>
-export default defineComponent({
-    async fetch() {
-        try {
-            console.log("fetching posts...")
-            const { data } = await useFetch("https://rl2-chaotic.com/api/blog/posts/");
-            //     const { json } = await post.json();
-            //     for (let i = 0; i < json.data.length; i++) {
-            //         this.poster.push(json.data[i].data);
-            //     }
-            //     console.log("Posts fetched: " + this.poster.length);
-            //     console.log("fetching complete");
-            //     this.poster.reverse();
-        } catch (err) {
-            console.log("error: " + err);
-        }
-    },
+export default {
     data() {
         return {
             readmore: false,
             poster: []
         }
     },
-    mounted() {
-        console.log(posts)
+    async fetch() {
+        try {
+            console.log("fetching posts...")
+            const res = await fetch("https://rl2-chaotic.com/api/blog/posts/");
+            const json = await res.json();
+            for (let i = 0; i < json.data.length; i++) {
+                this.poster.push(json.data[i].data);
+            }
+            console.log("Posts fetched: " + this.poster.length);
+            console.log("fetching complete");
+            this.poster.reverse();
+        } catch (err) {
+            console.log("error: " + err);
+        }
     },
-})
+    methods: {
+        morepls() {
+            this.readmore = true;
+        }
+    },
+}
 </script>
 <style scoped>
 #index {
