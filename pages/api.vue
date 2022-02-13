@@ -2,14 +2,16 @@
     <div>
         <h1>API Tests</h1>
         <div id="tester">
+            <button @click="$fetch">Refresh</button>
             <p v-if="$fetchState.pending">Fetching...</p>
             <p v-else-if="$fetchState.error">An error occurred :(</p>
             <div v-else>
                 <h2>Tester Get</h2>
                 <ul>
-                    <li v-for="user of users">{{ user.name }} - {{ user.phrase }} - {{ user.etc }}</li>
+                    <li
+                        v-for="user of users"
+                    >username: {{ user.name }} | userphrase: {{ user.phrase }} | useretc: {{ user.etc }}</li>
                 </ul>
-                <button @click="$fetch">Refresh</button>
             </div>
         </div>
         <div>
@@ -18,14 +20,9 @@
             <div v-else>
                 <h2>Color Test</h2>
                 <ul>
-                    <div id="apiColor" :style="color">{{ color }}</div>
+                    <div v-for="color of colors" :style="color">{{ color }}</div>
                 </ul>
             </div>
-        </div>
-        <div>
-            <h2>POST Test</h2>
-            <input v-model="input" placeholder="edit me bro" required="true" :onsubmit="poster" />
-            <p>{{ input }}</p>
         </div>
     </div>
 </template>
@@ -35,30 +32,24 @@ export default {
         return {
             users: [],
             colors: [],
-            color: String,
             style: "background-color: ",
             input: ""
-            // TODO
         }
     },
-    async poster() {
-        this.recieved = []
-        this.recieved = await this.$axios.post('insert', {
-            // TODO
-            name: Value,
-        })
-    },
     async fetch() {
-        this.users = []
-        this.users = await fetch(
-            'https://rl2-chaotic.com/tester'
-        ).then(res => res.json())
-
-        this.colors = []
-        this.colors = await fetch(
-            'https://rl2-chaotic.com/tester'
-        ).then(res => res.json())
-        this.color = this.style + this.colors[0].etc
+        try {
+            console.log("fetching users...")
+            const res = await fetch("https://rl2-chaotic.com/api/blog/users/all");
+            const json = await res.json();
+            for (let i = 0; i < json.data.length; i++) {
+                this.users.push(json.data[i].data);
+                this.colors.push(this.style + this.users[i].color);
+            }
+            console.log("Users fetched: " + this.users.length);
+            console.log("fetching complete");
+        } catch (err) {
+            console.log("error: " + err);
+        }
     },
 }
 </script>
